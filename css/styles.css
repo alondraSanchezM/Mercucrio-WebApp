@@ -1,0 +1,97 @@
+:root{
+    --fuente-principal: Poppins;
+    --color-fuente: #203442;
+    --color-boton: #203442;
+    --blanco: #fff;
+    --color-secundario:#C60F7B;
+    --color-input: #F2F2F2;
+}
+
+body{
+    background-color: #F7FAFB;
+}
+.imagenes-login{
+    margin-right: 100px;
+    margin-left: 0px;
+}
+
+.login-form{
+    margin-top: 100px;
+}
+.img-logo{
+    margin-bottom: 125px;
+}
+.img-fondo{
+    max-width: 580px;
+    width: 100%;
+}
+.formulario-login{
+    max-height: 880px;
+    height: 100%;
+    max-width: 800px;
+    width: 60%;
+    margin-left: 50px;
+    
+    margin-bottom: 30px;
+    font-family: var(--fuente-principal);
+    
+}
+
+.formulario-login-card{
+    max-height: 880px;
+    min-height: 600px;
+    height: 100%;
+    max-width: 800px;
+    min-width: 600px;
+    width: 60%;
+}
+
+.nombre-form, .label-login, .input-login, .label-login-registro{
+    color: var(--color-fuente);
+    font-style: normal;
+    font-weight: normal;
+}
+.nombre-form{
+    padding: 20px 0px;
+    font-size: 42px;
+}
+.label-login, .input-login, .boton-login{
+    font-size: 28px;
+    margin-top: 10px;
+}
+.input-login{
+    padding: 10px 10px;
+    border: 0px solid transparent;
+    border-radius: 22px;
+    min-width: 500px;
+    background-color: var(--color-input);
+}
+.boton-login{
+    text-decoration:none;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--color-boton);
+    color: var(--blanco);
+    text-align: center;
+}
+.label-login-registro{
+    font-size: 24px;
+    margin-top: 30px;
+    min-width: 600px;
+    margin-bottom: 30px;
+}
+
+.label-login-registro a {
+    text-decoration:none;
+}
+.label-login-registro-span{
+    text-decoration:none;
+    color: var(--color-secundario);
+}
+.card-borde {
+    border: 0px solid transparent;
+    border-radius: 22px;
+    -webkit-box-shadow: 0px 0px 22px 3px #D1D1D1; 
+box-shadow: 0px 0px 22px 3px #D1D1D1;
+    }
+    
