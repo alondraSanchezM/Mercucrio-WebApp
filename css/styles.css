@@ -3,6 +3,7 @@
     --color-fuente: #203442;
     --color-boton: #203442;
     --blanco: #fff;
+    --color-fondo: #F7FAFB;
     --color-secundario:#C60F7B;
     --color-input: #F2F2F2;
     --color-texto-footer: #909090;
@@ -19,7 +20,7 @@ html
     font-size: 62.5%;
 }
 body{
-    background-color: #F7FAFB;
+    background-color: var(--color-fondo);
 }
 
 
@@ -150,6 +151,7 @@ box-shadow: 0px 0px 22px 3px #D1D1D1;
     border-color: var(--color-border-menu);
     padding: 2rem 5rem 2rem 2rem;
     width: 25rem;
+    background-color: var(--color-fondo);
 }
 
 .dropdown-item{
@@ -201,6 +203,13 @@ box-shadow: 0px 0px 22px 3px #D1D1D1;
     width: 25rem;
     height: 32rem;
     margin:3.4rem 2.5rem;
+}
+
+.mis-datos-area-doble{
+    width: 145rem;
+    height: 50rem;
+    margin-bottom: 5rem;
+
 }
 
 .titulo-categorias{

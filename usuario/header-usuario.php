@@ -39,8 +39,12 @@
 
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <div class="dropdown-menu-config">
-                        <li><a class="dropdown-item" href="body-login.php">Iniciar sesión</a></li>
-                        <li><a class="dropdown-item" href="body-registro.php">Registrarse</a></li>
+                        <li><a class="dropdown-item" href="body-productos.php">Productos</a></li>
+                        <li><a class="dropdown-item" href="body-intercambios.php">Intercambios</a></li>
+                        <li><a class="dropdown-item" href="body-solicitudes.php">Solicitudes</a></li>
+                        <li><a class="dropdown-item" href="body-datos.php">Mis datos</a></li>
+                        <hr>
+                        <li><a class="dropdown-item" href="body-login.php">Salir</a></li>
                     </div>
                 </ul>
 

@@ -13,5 +13,5 @@
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet">
 
-    <title>Document</title>
+    <title>Mercurio</title>
 </head>

@@ -1,5 +1,5 @@
 <?php          
-require_once 'head-internauta.php';
+require_once 'head.php';
 ?>
 
 <body>
@@ -20,7 +20,7 @@ require_once 'head-internauta.php';
                             <input  class="input-login" type="text">
                             <label class="label-login">Contraseña </label>
                             <input  class="input-login" type="password">
-                            <a class="boton-login card-borde" href="">Iniciar sesión</a>
+                            <a class="boton-login card-borde" href="body-principal.php">Iniciar sesión</a>
                             <p class="label-login-registro">¿Ya estas registrado? <a href="body-login.php"><span class="label-login-registro-span">Inicia sesión.</span></a></p>
                         </form>
                     </div>
