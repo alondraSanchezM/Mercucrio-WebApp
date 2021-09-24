@@ -9,26 +9,25 @@ require_once 'header-administrador.php';
 ?>
     <main class="principal">
 
-        <div class="d-flex justify-content-around">
-            <a href="body-productos.php">
-                <div class="imagen-footer d-flex flex-column align-items-center">
-                    <div>
-                        <img class="imagen-productos" src="../images/imagen-productos.svg"
-                            alt="Imagen de los productos">
-                    </div>
-                    <p class="texto-imagenes-administrador">Productos</p>
-                </div>
-            </a>
+        <div class="d-flex align-items-center justify-content-around">
+            <hr class="linea-izq">
+            <p class="titulos-espacios">Clientes</p>
+            <hr class="linea-der">
 
-            <a href="body-clientes.php">
-                <div class="imagen-footer d-flex flex-column align-items-center">
-                    <div>
-                        <img class="imagen-clientes" src="../images/imagen-clientes.svg" alt="Imagen de los clientes">
-                    </div>
-                    <p class="texto-imagenes-administrador">Clientes</p>
-                </div>
         </div>
-        </a>
+
+        <div class="d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container">
+
+        <div class="clientes-registrados card-borde">
+            </div>
+
+            <div class="clientes-registrados card-borde">
+            </div>
+
+            <div class="clientes-registrados card-borde">
+            </div>
+
+        </div>
 
     </main>
 

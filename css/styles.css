@@ -148,7 +148,8 @@ box-shadow: 0px 0px 22px 3px #D1D1D1;
 .dropdown-menu-config{
     border: .2rem solid;
     border-color: var(--color-border-menu);
-    padding: 1rem 5rem 2rem 2rem;
+    padding: 2rem 5rem 2rem 2rem;
+    width: 25rem;
 }
 
 .dropdown-item{
@@ -187,7 +188,15 @@ box-shadow: 0px 0px 22px 3px #D1D1D1;
     width: 30%;
   }
 
-
+/* Body del adminitrador clientes */
+.clientes-registrados-container{
+    margin-top: 8rem;
+}
+.clientes-registrados{
+    width: 145rem;
+    height: 20rem;
+    margin-bottom: 5rem;
+}
   
 /* Body del adminitrador */
 .texto-imagenes-administrador{
