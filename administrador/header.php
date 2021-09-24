@@ -16,17 +16,6 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-                        <ul>
-                        <li><a class="dropdown-item" href="#">Categoria 1</a></li>
-                        <li><a class="dropdown-item" href="#">Categoria 2</a></li>
-                        <li><a class="dropdown-item" href="#">Categoria 3</a></li>
-                        <li><a class="dropdown-item" href="#">Categoria 4</a></li>
-                        <li><a class="dropdown-item" href="#">Categoria 5</a></li>
-                        <li><a class="dropdown-item" href="#">Categoria 6</a></li>
-                        <li><a class="dropdown-item" href="#">Categoria 7</a></li>
-                        <li><a class="dropdown-item" href="#">Categoria 8</a></li>
-
-                        </ul>
                     </div>
                 </div>
             </div>
