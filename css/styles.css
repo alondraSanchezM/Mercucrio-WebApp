@@ -1,5 +1,5 @@
 :root{
-    --fuente-principal: Poppins;
+    --fuente-principal: 'Poppins', sans-serif;
     --color-fuente: #203442;
     --color-boton: #203442;
     --blanco: #fff;
