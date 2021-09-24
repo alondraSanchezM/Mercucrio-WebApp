@@ -44,7 +44,7 @@
                         <li><a class="dropdown-item" href="body-solicitudes.php">Solicitudes</a></li>
                         <li><a class="dropdown-item" href="body-datos.php">Mis datos</a></li>
                         <hr>
-                        <li><a class="dropdown-item" href="body-login.php">Salir</a></li>
+                        <li><a class="dropdown-item" href="body-inicio.php">Salir</a></li>
                     </div>
                 </ul>
 
