@@ -12,6 +12,46 @@ require_once 'header.php';
             <hr class="linea-izq">
             <p class="titulos-espacios">Últimos productos</p>
             <hr class="linea-der">
+        </div>
+
+        <div class="d-flex  flex-column  align-items-center justify-content-around ultimos-productos-container">
+
+        <div class="d-flex align-items-center justify-content-around ultimos-productos-container-fila">
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-around ultimos-productos-container-fila">
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-around ultimos-productos-container-fila">
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+                <div class="ultimos-productos card-borde">
+                </div>
+            </div>
 
         </div>
     </main>

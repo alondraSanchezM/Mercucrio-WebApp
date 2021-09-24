@@ -189,13 +189,18 @@ box-shadow: 0px 0px 22px 3px #D1D1D1;
   }
 
 /* Body del adminitrador clientes */
-.clientes-registrados-container{
+.clientes-registrados-container, .ultimos-productos-container{
     margin-top: 8rem;
 }
 .clientes-registrados{
     width: 145rem;
     height: 20rem;
     margin-bottom: 5rem;
+}
+.ultimos-productos{
+    width: 25rem;
+    height: 32rem;
+    margin:3.4rem 4rem;
 }
   
 /* Body del adminitrador */
