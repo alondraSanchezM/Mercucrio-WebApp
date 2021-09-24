@@ -12,7 +12,7 @@
     </div>
 
     <div class=" align-content-end ">
-        <p class="texto-footer-sobre-nosotros">SOBRE NOSOTROS</p>
+        <p class="texto-footer-sobre-nosotros">Sobre Nosotros</p>
     </div>
     </div>
 

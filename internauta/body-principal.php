@@ -4,35 +4,23 @@ require_once 'head-internauta.php';
 
 
 <body>
-    <div class="login-form">
-        <div class="container">
-            <div class="row justify-content-left align-items-center">
-                <div class="col-4 imagenes-login">
-                    <img class="img-logo" src="../images/mercurio-logo.svg" alt="Logo de la Página">
-                    <img class="img-fondo" src="../images/login-imagen.svg" alt="Imagen de fondo">
-                </div>
-                <div class="col-4 ">
-                    <div class="card-borde formulario-login-card">
-                        <form class="formulario-login row">
-                            <label class="nombre-form">Iniciar sesión </label>
-                            <label class="label-login">Correo electrónico </label>
-                            <input  class="input-login" type="text">
-                            <label class="label-login">Contraseña </label>
-                            <input  class="input-login" type="password">
-                            <a class="boton-login card-borde" href="">Iniciar sesión</a>
-                            <p class="label-login-registro">¿Aún no te registras? <a href="body-registro.php"><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
-                        </form>
-                    </div>
-                </div>
-            </div>
+    <?php          
+require_once 'header.php';
+?>
+    <main class="principal">
+        <div class="d-flex align-items-center justify-content-around">
+            <hr class="linea-izq">
+            <p class="titulos-espacios">Últimos productos</p>
+            <hr class="linea-der">
+
         </div>
+    </main>
 
-    </div>
-
-<?php          
+    <?php          
 require_once 'footer.php';
 ?>
 
 
 </body>
+
 </html>
