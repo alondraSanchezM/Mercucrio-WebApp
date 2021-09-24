@@ -8,47 +8,52 @@
     --color-texto-footer: #909090;
 }
 
+
+html
+{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
 body{
     background-color: #F7FAFB;
 }
 
 
 
+
 /* Login y registrarse */
 .imagenes-login{
-    margin-right: 100px;
-    margin-left: 0px;
+    margin-right: 10rem;
 }
 
 .login-form{
-    margin-top: 100px;
+    margin-top: 10rem;
 }
 .img-logo{
-    margin-bottom: 125px;
+    margin-bottom: 12.5rem;
 }
 .img-fondo{
-    max-width: 580px;
+    max-width: 58rem;
     width: 100%;
+    
 }
 .formulario-login{
-    max-height: 880px;
-    height: 100%;
-    max-width: 800px;
-    width: 60%;
-    margin-left: 50px;
+    max-height: 88rem;
+    max-width: 80rem;
+    margin-left: 5rem;
     
-    margin-bottom: 30px;
+    margin-bottom: 3rem;
     font-family: var(--fuente-principal);
     
 }
 
 .formulario-login-card{
-    max-height: 880px;
-    min-height: 600px;
+    max-height: 88rem;
+    min-height: 60rem;
     height: 100%;
-    max-width: 800px;
-    min-width: 600px;
-    width: 60%;
+    max-width: 80rem;
+    min-width: 70rem;
+    width: 70%;
 }
 
 .nombre-form, .label-login, .input-login, .label-login-registro{
@@ -57,33 +62,34 @@ body{
     font-weight: normal;
 }
 .nombre-form{
-    padding: 20px 0px;
-    font-size: 42px;
+    padding: 2rem 0;
+    font-size: 4.2rem;
 }
 .label-login, .input-login, .boton-login{
-    font-size: 28px;
-    margin-top: 10px;
+    font-size: 2.8rem;
+    margin-top: 1rem;
 }
 .input-login{
-    padding: 10px 10px;
+    padding: 1rem 1rem;
     border: 0px solid transparent;
-    border-radius: 22px;
-    min-width: 500px;
+    border-radius: 2.2rem;
+    max-width: 60rem;
     background-color: var(--color-input);
 }
 .boton-login{
     text-decoration:none;
-    margin-top: 20px;
-    padding: 10px 20px;
+    width: 33rem;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
     background-color: var(--color-boton);
     color: var(--blanco);
     text-align: center;
 }
 .label-login-registro{
-    font-size: 24px;
-    margin-top: 30px;
-    min-width: 600px;
-    margin-bottom: 30px;
+    font-size: 2.4rem;
+    margin-top: 3rem;
+    min-width: 60rem;
+    margin-bottom: 3rem;
 }
 
 .label-login-registro a {
@@ -101,18 +107,14 @@ box-shadow: 0px 0px 22px 3px #D1D1D1;
     }
     
 
-
-
-
-
 /* Footer */
 .footer{
-    margin-top: 100px;
+    margin-top: 10rem;
     background-color: var(--color-fuente);
 }
 
 .img-logo-fondo{
-    margin: 50px 80px;
+    margin: 5rem 8rem;
 }
 
 .texto-footer-derechos{
@@ -120,8 +122,8 @@ box-shadow: 0px 0px 22px 3px #D1D1D1;
     color: var(--color-texto-footer);
     font-style: normal;
     font-weight: lighter;
-    margin-top: 115px;
-    font-size: 14px;
+    margin-top: 11.5rem;
+    font-size: 1.4rem;
 }
 
 
@@ -130,9 +132,9 @@ box-shadow: 0px 0px 22px 3px #D1D1D1;
     color: var(--blanco);
     font-style: normal;
     font-weight: lighter;
-    margin-top: 75px;
-    margin-right: 130px;
-    font-size: 22px;
+    margin-top: 7.5rem;
+    margin-right: 13rem;
+    font-size: 2.2rem;
     font-weight: bolder;
     
 }
