@@ -1,5 +1,5 @@
 <?php          
-require_once 'head-internauta.php';
+require_once 'head.php';
 ?>
 
 

@@ -200,7 +200,16 @@ box-shadow: 0px 0px 22px 3px #D1D1D1;
 .ultimos-productos{
     width: 25rem;
     height: 32rem;
-    margin:3.4rem 4rem;
+    margin:3.4rem 2.5rem;
+}
+
+.titulo-categorias{
+    
+    font-family: var(--fuente-principal);
+    color: var(--color-fuente);
+    font-style: normal;
+    font-weight: bold;
+    font-size: 4.2rem;
 }
   
 /* Body del adminitrador */
