@@ -5,8 +5,8 @@ require_once 'head.php';
 
 <body>
     <?php          
-require_once 'header.php';
-?>
+    require_once 'header.php';
+    ?>
     <main class="principal">
         <div class="d-flex align-items-center justify-content-around">
             <hr class="linea-izq">

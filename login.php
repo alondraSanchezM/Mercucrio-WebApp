@@ -7,21 +7,19 @@ require_once 'head.php';
         <div class="container">
             <div class="row justify-content-left align-items-center">
                 <div class="col-4 imagenes-login">
-                    <img class="img-logo" src="../images/mercurio-logo.svg" alt="Logo de la Página">
-                    <img class="img-fondo" src="../images/login-imagen.svg" alt="Imagen de fondo">
+                    <img class="img-logo" src="images/mercurio-logo.svg" alt="Logo de la Página">
+                    <img class="img-fondo" src="images/login-imagen.svg" alt="Imagen de fondo">
                 </div>
                 <div class="col-4 ">
                     <div class="card-borde formulario-login-card">
                         <form class="formulario-login row">
-                            <label class="nombre-form">Regístrate</label>
-                            <label class="label-login">Nombre </label>
-                            <input  class="input-login" type="text">
+                            <label class="nombre-form">Iniciar sesión </label>
                             <label class="label-login">Correo electrónico </label>
                             <input  class="input-login" type="text">
                             <label class="label-login">Contraseña </label>
                             <input  class="input-login" type="password">
-                            <a class="boton-login card-borde" href="body-principal.php">Iniciar sesión</a>
-                            <p class="label-login-registro">¿Ya estas registrado? <a href="body-login.php"><span class="label-login-registro-span">Inicia sesión.</span></a></p>
+                            <a class="boton-login card-borde" href="index.php">Iniciar sesión</a>
+                            <p class="label-login-registro">¿Aún no te registras? <a href="register.php"><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
                         </form>
                     </div>
                 </div>

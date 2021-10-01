@@ -3,12 +3,12 @@
 
         <div class="imagen-footer d-flex align-items-center">
             <div>
-                <img class="img-logo-fondo" src="../images/logo-footer.svg" alt="Logo de la Página">
+                <img class="img-logo-fondo" src="images/logo-footer.svg" alt="Logo de la Página">
             </div>
         </div>
         
     <div class="derechos-pagina align-content-end ">
-        <p class="texto-footer-derechos">Ⓒ 2021, MERCURIO Todos los derechos reservados</p>
+        <p class="texto-footer-derechos">Ⓒ 2021 | MERCURIO Todos los derechos reservados</p>
     </div>
 
     <div class=" align-content-end ">

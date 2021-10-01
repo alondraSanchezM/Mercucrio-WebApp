@@ -5,8 +5,8 @@ require_once 'head.php';
 
 <body>
     <?php          
-require_once 'header-administrador.php';
-?>
+        require_once 'header-administrador.php';
+    ?>
     <main class="principal">
 
 

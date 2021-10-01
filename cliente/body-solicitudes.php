@@ -5,13 +5,13 @@ require_once 'head.php';
 
 <body>
     <?php          
-require_once 'header-usuario.php';
-?>
+    require_once 'header-cliente.php';
+    ?>
     <main class="principal">
 
         <div class="d-flex align-items-center justify-content-around">
             <hr class="linea-izq">
-            <p class="titulos-espacios">Mis Productos</p>
+            <p class="titulos-espacios">Mis Solicitudes</p>
             <hr class="linea-der">
 
         </div>

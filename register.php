@@ -7,8 +7,8 @@ require_once 'head.php';
         <div class="container">
             <div class="row justify-content-left align-items-center">
                 <div class="col-4 imagenes-login">
-                    <img class="img-logo" src="../images/mercurio-logo.svg" alt="Logo de la Página">
-                    <img class="img-fondo" src="../images/login-imagen.svg" alt="Imagen de fondo">
+                    <img class="img-logo" src="images/mercurio-logo.svg" alt="Logo de la Página">
+                    <img class="img-fondo" src="images/login-imagen.svg" alt="Imagen de fondo">
                 </div>
                 <div class="col-4 ">
                     <div class="card-borde formulario-login-card">
@@ -20,8 +20,8 @@ require_once 'head.php';
                             <input  class="input-login" type="text">
                             <label class="label-login">Contraseña </label>
                             <input  class="input-login" type="password">
-                            <a class="boton-login card-borde" href="body-principal.php">Iniciar sesión</a>
-                            <p class="label-login-registro">¿Ya estas registrado? <a href="body-login.php"><span class="label-login-registro-span">Inicia sesión.</span></a></p>
+                            <a class="boton-login card-borde" href="index.php">Iniciar sesión</a>
+                            <p class="label-login-registro">¿Ya estas registrado? <a href="login.php"><span class="label-login-registro-span">Inicia sesión.</span></a></p>
                         </form>
                     </div>
                 </div>
