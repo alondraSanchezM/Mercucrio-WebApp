@@ -5,7 +5,7 @@ require_once '../head.php';
 
 <body>
     <?php session_start();         
-    if(!$_SESSION['username'] || $_SESSION['tipoUsuario']!=0) header("Location:index.php");       
+    if(!$_SESSION['username'] || $_SESSION['tipoUsuario']!=0) header("Location:../index.php");       
         require_once 'header-administrador.php';
     ?>
     <main class="principal">

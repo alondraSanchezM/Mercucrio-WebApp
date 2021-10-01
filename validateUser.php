@@ -6,11 +6,12 @@
 
     $link=mysqli_connect("localhost","root","");
     mysqli_select_db($link,"mercurioDB");
-    $result=mysqli_query($link,"select correo, pass,tipo from users where correo='$usu'");
+    $result=mysqli_query($link,"select correo, nombre, pass,tipo from users where correo='$usu'");
     if($row=mysqli_fetch_array($result)){//Si se encontró el usuario
         if($row["pass"]==$pas){
             //echo "Usuario registrado";
             $ti=$row['tipo'];
+            $_SESSION['nombre']=$row["nombre"];
             $_SESSION['username']=$usu; //Variables de sesion
             $_SESSION['tipoUsuario']=$ti; //Variables de sesion
             if($ti==1)header("Location:cliente/body-principal.php");

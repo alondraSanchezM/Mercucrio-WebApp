@@ -12,15 +12,15 @@ require_once 'head.php';
                 </div>
                 <div class="col-4 ">
                     <div class="card-borde formulario-login-card">
-                        <form class="formulario-login row">
+                        <form class="formulario-login row" action="insertUser.php" method="POST">
                             <label class="nombre-form">Regístrate</label>
                             <label class="label-login">Nombre </label>
-                            <input  class="input-login" type="text">
+                            <input  class="input-login" type="text" name="nombre" required>
                             <label class="label-login">Correo electrónico </label>
-                            <input  class="input-login" type="text">
+                            <input  class="input-login" type="text" name="usu" required>
                             <label class="label-login">Contraseña </label>
-                            <input  class="input-login" type="password">
-                            <a class="boton-login card-borde" href="index.php">Iniciar sesión</a>
+                            <input  class="input-login" type="password" name="passwd" required>
+                            <input class="boton-login card-borde" type="submit"  name="enviar" value="Crear cuenta"/>
                             <p class="label-login-registro">¿Ya estas registrado? <a href="login.php"><span class="label-login-registro-span">Inicia sesión.</span></a></p>
                         </form>
                     </div>

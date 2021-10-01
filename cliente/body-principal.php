@@ -5,7 +5,7 @@ require_once '../head.php';
 
 <body>
     <?php session_start();   
-    if(!$_SESSION['username'] || $_SESSION['tipoUsuario']!=1) header("Location:index.php");
+    if(!$_SESSION['username'] || $_SESSION['tipoUsuario']!=1) header("Location:../index.php");
     require_once 'header-cliente.php';
     ?>
     <main class="principal">

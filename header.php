@@ -40,7 +40,7 @@
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                     <div class="dropdown-menu-config">
                         <li><a class="dropdown-item" href="login.php">Iniciar sesión</a></li>
-                        <li><a class="dropdown-item" href="registro.php">Registrarse</a></li>
+                        <li><a class="dropdown-item" href="register.php">Registrarse</a></li>
                     </div>
                 </ul>
 

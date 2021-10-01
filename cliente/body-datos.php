@@ -20,7 +20,7 @@ require_once '../head.php';
         <div class="d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container">
 
             <div class="clientes-registrados card-borde">
-                Bienvenido <?PHP echo $_SESSION['username']; ?>
+                Bienvenido <?PHP echo $_SESSION['nombre']; ?>
             </div>
 
             <div class="mis-datos-area-doble card-borde">
