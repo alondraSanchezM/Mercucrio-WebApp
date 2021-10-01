@@ -16,7 +16,7 @@
                     
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">                    
                     <div class="dropdown-menu-config">
-                        <li><a class="dropdown-item" href="index.php">Salir</a></li>
+                        <li><a class="dropdown-item" href="../salir.php">Salir</a></li>
                     </div>
                 </ul>
                 

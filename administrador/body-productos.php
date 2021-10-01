@@ -1,10 +1,11 @@
 <?php          
-require_once 'head.php';
+require_once '../head.php';
 ?>
 
 
 <body>
-    <?php          
+    <?php session_start();         
+    if(!$_SESSION['username'] || $_SESSION['tipoUsuario']!=0) header("Location:index.php");     
     require_once 'header-administrador.php';
     ?>
     <main class="principal">
@@ -31,8 +32,8 @@ require_once 'head.php';
 
     </main>
 
-    <?php          
-require_once 'footer.php';
+<?php          
+    require_once '../footer.php';
 ?>
 
 

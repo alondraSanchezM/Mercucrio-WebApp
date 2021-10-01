@@ -13,6 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&display=swap" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-    
+    <link href="../css/styles.css" rel="stylesheet">
     <title>Mercurio</title>
 </head>

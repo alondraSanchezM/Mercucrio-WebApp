@@ -15,10 +15,11 @@ require_once 'head.php';
                         <form class="formulario-login row" action="validateUser.php" method="POST">
                             <label class="nombre-form">Iniciar sesión </label>
                             <label class="label-login">Correo electrónico </label>
-                            <input  class="input-login" type="text" name="usu" required>
+                            <input class="input-login" type="text" name="usu" required>
                             <label class="label-login">Contraseña </label>
-                            <input  class="input-login" type="password" name="passwd" required>
-                            <input class="boton-login card-borde" type="submit"  name="enviar" value="Iniciar sesión"/>
+                            <input class="input-login" type="password" name="passwd" required>
+                            <input class="boton-login card-borde"  type="submit"  name="enviar" value="Iniciar sesión" />
+                            <p class="label-login-registro">ERROR! PASSWORD INCORRECTO </p>
                             <p class="label-login-registro">¿Aún no te registras? <a href="register.php"><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
                         </form>
                     </div>
