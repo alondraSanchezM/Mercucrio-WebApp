@@ -20,7 +20,19 @@ require_once '../head.php';
         <div class="d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container">
 
             <div class="clientes-registrados card-borde">
-                Bienvenido <?PHP echo $_SESSION['nombre']; ?>
+                <?php
+                    $id=intval($_SESSION['id']);
+                    $link=mysqli_connect("localhost","root","");
+                    mysqli_select_db($link,"mercurioDB");
+                    $result=mysqli_query($link,"select * from Users where id_user=$id");
+                    while($row=mysqli_fetch_array($result)){
+                        $correo=$row['correo'];
+                        $pass=$row['pass'];
+                        $nombre=$row['nombre'];
+                        $tel=$row['telefono'];
+                        echo $id;
+                    }
+                ?>
             </div>
 
             <div class="mis-datos-area-doble card-borde">

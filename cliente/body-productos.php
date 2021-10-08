@@ -17,18 +17,27 @@ require_once '../head.php';
 
         </div>
 
-        <div class="d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container">
-
-            <div class="clientes-registrados card-borde">
-            </div>
-
-            <div class="clientes-registrados card-borde">
-            </div>
-
-            <div class="clientes-registrados card-borde">
-            </div>
-
-        </div>
+        <?php
+            $link=mysqli_connect("localhost","root","");
+            mysqli_select_db($link,"mercurioDB");
+            $id=intval($_SESSION['id']);
+            $result=mysqli_query($link,"select * from productos where id_user=$id");
+            echo "<div class='d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container'>";
+                while($row=mysqli_fetch_array($result)){
+                    echo "<div class='clientes-registrados card-borde'>";
+                    $id_p=$row['id_producto'];
+                    $ima=$id.$id_p.'.jpg';
+                    $nom=$row['nombre'];
+                    $cat=$row['categoria'];
+                    $est=$row['estado'];
+                    $mun=$row['municipio'];
+                    $fecha=$row['fecha'];
+                    $desp=$row['descripcion'];
+                    echo "<br><img  src='../images/productos/$ima' width='50' height='57'/>";
+                    echo "</div> ";
+                }
+            echo "</div>";
+        ?>
 
     </main>
 

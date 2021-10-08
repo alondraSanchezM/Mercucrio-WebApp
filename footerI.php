@@ -3,7 +3,7 @@
 
         <div class="imagen-footer d-flex align-items-center">
             <div>
-                <img class="img-logo-fondo" src="images/logo-footer.svg" alt="Logo de la Página">
+                <a href="index.php"><img class="img-logo-fondo" src="images/logo-footer.svg" alt="Logo de la Página"></a>
             </div>
         </div>
         

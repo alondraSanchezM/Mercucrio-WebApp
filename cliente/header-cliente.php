@@ -21,7 +21,9 @@
                 </div>
             </div>
             <div>
-                <img class="logo-menu" src="../images/mercurio-logo.svg" alt="Logo de la Página">
+                <a href="body-principal.php">
+                    <img class="logo-menu" src="../images/mercurio-logo.svg" alt="Logo de la Página">
+                </a>
             </div>
         </div>
 

@@ -3,7 +3,7 @@
 
         <div class="imagen-footer d-flex align-items-center">
             <div>
-                <img class=" imagen-menu logo-menu" src="../images/mercurio-logo.svg" alt="Logo de la Página">
+                <a href="body-principal.php"><img class=" imagen-menu logo-menu" src="../images/mercurio-logo.svg" alt="Logo de la Página"></a>
             </div>
         </div>
 

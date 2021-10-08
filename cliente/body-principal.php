@@ -14,47 +14,40 @@ require_once '../head.php';
             <p class="titulos-espacios">Últimos productos</p>
             <hr class="linea-der">
         </div>
+        <?php
+            $link=mysqli_connect("localhost","root","");
+            mysqli_select_db($link,"mercurioDB");
+            $result=mysqli_query($link,"select * from Productos where status='0'");
+            echo "<div class='d-flex  flex-column  align-items-center justify-content-around ultimos-productos-container'>";
+                echo "<div class='d-flex align-items-center justify-content-around ultimos-productos-container-fila'>";
+                    $num=0;
+                    while($row=mysqli_fetch_array($result)){ 
+                        $id_p=$row['id_producto'];
+                        $id_u=$row['id_user'];
+                        $cat=$row['categoria'];
+                        $nom=$row['nombre'];
+                        $est=$row['estado'];
+                        $mun=$row['municipio'];
+                        $fech=$row['fecha'];
+                        $ima=$id_u.$id_p.'.jpg';
+                        if($num<5){
+                            echo "<div class='ultimos-productos card-borde'>";
+                                echo "<img  style='border-radius: 22px 22px 0 0' src='../images/productos/$ima' width='250' height='227'/>";
+                            echo "</div>";
+                        }else{
+                            echo"</div>";
+                            echo "<div class='d-flex align-items-center justify-content-around ultimos-productos-container-fila'>";
+                            echo "<div class='ultimos-productos card-borde'>";
+                                echo "<img  style='border-radius: 22px 22px 0 0' src='../images/productos/$ima' width='250' height='227'/>";
+                             echo "</div>";
+                            $num=0;
+                        }
+                        $num++;
+                    }
+                echo"</div>";
+            echo"</div>";
+        ?>
 
-        <div class="d-flex  flex-column  align-items-center justify-content-around ultimos-productos-container">
-
-        <div class="d-flex align-items-center justify-content-around ultimos-productos-container-fila">
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-            </div>
-            <div class="d-flex align-items-center justify-content-around ultimos-productos-container-fila">
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-            </div>
-            <div class="d-flex align-items-center justify-content-around ultimos-productos-container-fila">
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-                <div class="ultimos-productos card-borde">
-                </div>
-            </div>
-
-        </div>
     </main>
 
 <?php          
