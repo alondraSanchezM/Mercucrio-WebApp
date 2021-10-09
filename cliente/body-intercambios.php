@@ -26,6 +26,7 @@
                     $ima_pr=$id.$id_pr.'.jpg';
                     $desp_pr=$row['descripcion'];
                     $result2=mysqli_query($link,"select * from solicitudes where producto_solicitante=$id_pr and status=1");
+                    
                     while($row2=mysqli_fetch_array($result2)){
                         echo "<div class='clientes-registrados card-borde'>";
                             $id_A=$row2['producto_solicitado'];
@@ -35,11 +36,13 @@
                             $id_u_A=$rowA['id_user'];
                             $imA=$id_u_A.$id_A.'.jpg';
                             $desp_A=$rowA['descripcion'];
-                        echo "</div>";
+                            echo "<div class='d-flex  flex-row align-self-start'> <img  class='card-intercambios-imagen' src='../images/productos/$imA' />";
+                            echo "<div class='d-flex  flex-column card-intercambios-texto align-self-start'> <p class='card-intercambios-titulo'>$nom_A</p>  <p class='card-intercambios-descripcion'>$desp_A</p> </div> ";
+                            echo "<div class='card-intercambios-espacio'> <button class='card-intercambios-boton card-borde' name='enviar' > Información del intercambio </button>";
+                            echo "</div>";
                     }
                     $result2=mysqli_query($link,"select * from solicitudes where producto_solicitado=$id_pr and status=1");
                     while($row2=mysqli_fetch_array($result2)){
-                        echo "<div class='clientes-registrados card-borde'>";
                             $id_B=$row2['producto_solicitante'];
                             $prod_solicitante=mysqli_query($link,"select * from productos where id_producto=$id_B");
                             $rowB=mysqli_fetch_array($prod_solicitante);
@@ -47,7 +50,12 @@
                             $id_u_B=$rowB['id_user'];
                             $imB=$id_u_B.$id_B.'.jpg';
                             $desp_B=$rowB['descripcion'];
-                        echo "</div>";
+                            
+                            echo "<div class='d-flex  flex-row align-self-end'> ";
+                            echo "<div class='d-flex  flex-column card-intercambios-texto align-self-start'> <p class='card-intercambios-titulo alineamiento-izq'>$nom_B</p>  <p class='alineamiento-izq card-intercambios-descripcion'>$desp_B</p> </div> ";
+                            echo " <img  class='card-intercambios-imagen' src='../images/productos/$imB' /> </div> </div>";
+                        
+                    echo "</div>";
                     }
                 }
             echo "</div>";

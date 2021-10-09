@@ -14,8 +14,8 @@
             $ima=$id_u.$id_p.'.jpg';
             echo "<div class='align-items-center justify-content-center ultimos-productos-container-grid'>";
             echo "<div class='ultimos-productos card-borde'>";
-            echo "<img  style='border-radius: 22px 22px 0 0' src='".$subCarp."images/productos/$ima' width='250' height='227'/>";
-            $cat=strtoupper($cat);
+            echo "<img  class='card-imagen' src='".$subCarp."images/productos/$ima'/>";
+            
             echo "<p class='card-categoria'>$cat</p>";
             echo "<p  class='card-titulo'>$nom</p>";
             echo"<div class='d-flex  flex-row'><img class='card-ubicacion' src='".$subCarp."images/ubicacion.svg'</img> <p  class='card-ubicacion'>$mun, $est</p>";

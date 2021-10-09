@@ -1,6 +1,8 @@
-<?php          
-require_once 'head.php';
+<?php
+    $subCarp="./";
+    require_once 'head.php';
 ?>
+
 
 <body>
     <div class="login-form">

@@ -11,6 +11,7 @@
     --fuente-titulos-menu: 'Didact Gothic', sans-serif;
     --color-border-menu: #BDC7CA;
     --color-texto-menu: #536876;
+    --fuente-secundaria: 'Nanum Gothic', sans-serif;
 }
 
 html {
@@ -200,7 +201,6 @@ body {
 
 .clientes-registrados-container, .ultimos-productos-container {
     margin-top: 8rem;
-    
 }
 
 .ultimos-productos-container-grid {
@@ -216,7 +216,7 @@ body {
 }
 
 .clientes-registrados {
-    width: 145rem;
+    width: 45rem;
     height: 20rem;
     margin-bottom: 5rem;
 }
@@ -242,33 +242,158 @@ body {
 }
 
 /* Cards de productos */
-.card-categoria{
-    margin: 0.8rem 0 0 1rem;
-    font-size: 1.2rem;
+
+.card-imagen {
+    width: 23rem;
+    height: 21rem;
+    margin: 1rem 1rem 0 1rem;
+    border: 0px solid transparent;
+    border-radius: 22px 22px 0 0;
+}
+
+.card-categoria {
+    margin: 1rem 0 0 1rem;
+    font-size: 1rem;
     font-family: var(--fuente-principal);
+    color: var(--color-fuente);
+    text-transform: uppercase;
     font-weight: bold;
 }
 
-.card-titulo{
-    margin: 0.8rem 0 0 1rem;
-    font-size: 1.8rem;
-    font-family: var(--fuente-principal);
+.card-titulo {
+    margin: 0.4rem 0 0.5rem 0rem;
+    font-size: 1.4rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
     text-align: center;
 }
 
-
-.card-ubicacion{
+.card-ubicacion {
     margin: 0.8rem 0 0 1rem;
     font-size: 1rem;
-    font-family: var(--fuente-principal);
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
     font-weight: lighter;
 }
 
-.card-fecha{
+.card-fecha {
     margin: 0.8rem 1rem 0 0;
     font-size: 1rem;
-    font-family: var(--fuente-principal);
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
     font-weight: lighter;
+    text-align: right;
+}
+
+/* Cards de mis productos */
+
+.card-mis-productos-imagen {
+    width: 20rem;
+    height: 18rem;
+    margin: 1rem 1rem 0 1rem;
+    border: 0px solid transparent;
+    border-radius: 22px 0 0 22px;
+}
+
+.card-mis-productos-titulo {
+    margin: 2.2rem 0 0 1rem;
+    font-size: 2.2rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+}
+
+.card-mis-productos-texto {
+    max-width: 52rem;
+    width: 100%;
+}
+
+.card-mis-productos-descripcion {
+    margin: 2rem 0 0 1rem;
+    font-size: 1.8rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+}
+
+.card-mis-productos-datos-finales {
+    padding: 2rem 3.7rem 1.7rem 1rem;
+    max-width: 20rem;
+    width: 100%;
+    height: 18rem;
+}
+
+.card-mis-productos-categoria {
+    margin: 1rem 0 0 1rem;
+    font-size: 1.5rem;
+    font-family: var(--fuente-principal);
+    color: var(--color-fuente);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.card-mis-productos-ubicacion {
+    margin: 0.8rem 0 0 1rem;
+    font-size: 1.4rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: lighter;
+}
+
+.card-mis-productos-fecha {
+    margin: 0.8rem 0 0 0;
+    font-size: 1.4rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: lighter;
+    text-align: right;
+}
+
+
+
+
+
+/* Cards de intercambios */
+
+.card-intercambios-imagen {
+    width: 20rem;
+    height: 18rem;
+    margin: 1rem 1rem 0 1rem;
+    border: 0px solid transparent;
+    border-radius: 22px;
+}
+
+.card-intercambios-titulo {
+    margin: 2.2rem 1rem 0 1rem;
+    font-size: 2.2rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: bold;
+}
+
+.card-intercambios-texto {
+    max-width: 25rem;
+    width: 100%;
+}
+
+.card-intercambios-descripcion {
+    margin: 1rem 1rem 0 1rem;
+    font-size: 2rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+}
+
+.card-intercambios-boton {
+    text-decoration: none;
+    width: 21rem;
+    margin: 6rem 0;
+    padding: 1rem 2rem;
+    background-color: var(--color-secundario);
+    color: var(--blanco);
+    text-align: center;
+    font-size: 1.7rem;
+    font-weight: lighter;
+}
+
+.alineamiento-izq{
     text-align: right;
 }
 
@@ -332,6 +457,12 @@ body {
     .grid-productos {
         grid-template-columns: repeat(2, 1fr);
     }
+    .clientes-registrados {
+        width: 75rem;
+    }
+    .card-mis-productos-texto {
+        max-width: 42rem;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -339,6 +470,16 @@ body {
 @media (min-width: 992px) {
     .grid-productos {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .clientes-registrados {
+        width: 95rem;
+    }
+    .card-mis-productos-texto {
+        max-width: 52rem;
+    }
+    
+    .card-mis-productos-categoria {
+        margin-bottom: 7rem;
     }
 }
 
@@ -356,11 +497,32 @@ body {
     .grid-productos {
         grid-template-columns: repeat(4, 1fr);
     }
+    .clientes-registrados {
+        width: 115rem;
+    }
+    .card-mis-productos-texto {
+        max-width: 72rem;
+    }
+    .card-intercambios-texto{
+        max-width: 30rem;
+    }
 }
-
 
 @media (min-width: 1500px) {
     .grid-productos {
         grid-template-columns: repeat(5, 1fr);
+    }
+    .clientes-registrados {
+        width: 145rem;
+    }
+    .card-mis-productos-texto {
+        max-width: 102rem;
+    }
+    .card-intercambios-texto{
+        max-width: 35rem;
+    }
+        
+    .card-intercambios-espacio   {
+     margin: 0rem 5rem ;   
     }
 }
