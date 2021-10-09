@@ -1,13 +1,10 @@
-<?php          
-require_once '../head.php';
-?>
-
-
-<body>
-    <?php  session_start();           
-    if(!$_SESSION['username'] || $_SESSION['tipoUsuario']!=1) header("Location:index.php");
+<?php session_start();       
+    if(!$_SESSION['username'] || $_SESSION['tipoUsuario']!=1) header("Location:../index.php");
+    $subCarp="../";
+    require_once '../head.php';
+    echo "<body>";
     require_once 'header-cliente.php';
-    ?>
+?>
     <main class="principal">
 
         <div class="d-flex align-items-center justify-content-around">
