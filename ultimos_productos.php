@@ -14,11 +14,11 @@
             $ima=$id_u.$id_p.'.jpg';
             echo "<div class='align-items-center justify-content-center ultimos-productos-container-grid'>";
             echo "<div class='ultimos-productos card-borde'>";
-            echo "<img  class='card-imagen' src='".$subCarp."images/productos/$ima'/>";
+            echo "<img  class='card-imagen' src='".$subCarp."images/productos/$ima'>";
             
             echo "<p class='card-categoria'>$cat</p>";
             echo "<p  class='card-titulo'>$nom</p>";
-            echo"<div class='d-flex  flex-row'><img class='card-ubicacion' src='".$subCarp."images/ubicacion.svg'</img> <p  class='card-ubicacion'>$mun, $est</p>";
+            echo"<div class='d-flex  flex-row'><img class='card-ubicacion' src='".$subCarp."images/ubicacion.svg'> <p  class='card-ubicacion'>$mun, $est</p>";
             echo "<p  class='card-fecha col align-self-end'> Publicado: $fech</p></div>";
             echo "</div>";  
             echo "</div>";

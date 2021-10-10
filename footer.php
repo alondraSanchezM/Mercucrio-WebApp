@@ -16,7 +16,9 @@
     </div>
 
     <div class=" align-content-end ">
-        <p class="texto-footer-sobre-nosotros">Sobre Nosotros</p>
+        <a  href="./sobre_nosotros.php">
+            <p class="texto-footer-sobre-nosotros">Sobre Nosotros</p>
+        </a>
     </div>
     </div>
 

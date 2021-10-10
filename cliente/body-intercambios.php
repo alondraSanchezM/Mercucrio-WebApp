@@ -36,7 +36,7 @@
                             $id_u_A=$rowA['id_user'];
                             $imA=$id_u_A.$id_A.'.jpg';
                             $desp_A=$rowA['descripcion'];
-                            echo "<div class='d-flex  flex-row align-self-start'> <img  class='card-intercambios-imagen' src='../images/productos/$imA' />";
+                            echo "<div class='d-flex  flex-row align-self-start'> <img  class='card-intercambios-imagen' src='../images/productos/$imA' >";
                             echo "<div class='d-flex  flex-column card-intercambios-texto align-self-start'> <p class='card-intercambios-titulo'>$nom_A</p>  <p class='card-intercambios-descripcion'>$desp_A</p> </div> ";
                             echo "<div class='card-intercambios-espacio'> <button class='card-intercambios-boton card-borde' name='enviar' > Información del intercambio </button>";
                             echo "</div>";

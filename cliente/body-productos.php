@@ -30,10 +30,10 @@
                     $mun=$row['municipio'];
                     $fecha=$row['fecha'];
                     $desp=$row['descripcion'];
-                    echo "<div class='d-flex  flex-row align-self-start'> <img  class='card-mis-productos-imagen' src='../images/productos/$ima' />";
+                    echo "<div class='d-flex  flex-row align-self-start'> <img  class='card-mis-productos-imagen' src='../images/productos/$ima' >";
                     echo "<div class='d-flex  flex-column card-mis-productos-texto align-self-start'> <p class='card-mis-productos-titulo'>$nom</p>  <p class='card-mis-productos-descripcion'>$desp</p> </div> ";
                     echo "<div class='d-flex  flex-column card-mis-productos-datos-finales col align-self-end' > <p class='card-mis-productos-categoria'>$cat</p> ";
-                    echo "<div  class='d-flex  flex-row align-self-end'><img class='card-mis-productos-ubicacion' src='".$subCarp."images/ubicacion.svg'</img> <p  class='card-mis-productos-ubicacion'>$mun, $est</p></div> ";                    
+                    echo "<div  class='d-flex  flex-row align-self-end'><img class='card-mis-productos-ubicacion' src='".$subCarp."images/ubicacion.svg'> <p  class='card-mis-productos-ubicacion'>$mun, $est</p></div> ";                    
                     echo "<p  class='card-mis-productos-fecha col align-self-end'> Publicado: $fecha</p> </div></div></div> ";
                 }
             echo "</div>";
