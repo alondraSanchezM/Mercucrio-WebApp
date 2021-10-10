@@ -7,7 +7,7 @@
 <body>
     <div class="login-form">
         <div class="container">
-            <div class="row justify-content-left align-items-center">
+            <div class="row justify-content-left align-items-center  container-responsive-login-registro">
                 <div class="col-4 imagenes-login">
                     <img class="img-logo" src="images/mercurio-logo.svg" alt="Logo de la Página">
                     <img class="img-fondo" src="images/login-imagen.svg" alt="Imagen de fondo">
@@ -16,8 +16,16 @@
                     <div class="card-borde formulario-login-card">
                         <form class="formulario-login row" action="insertUser.php" method="POST">
                             <label class="nombre-form">Regístrate</label>
-                            <label class="label-login">Nombre </label>
-                            <input  class="input-login" type="text" name="nombre" required>
+                            <div class="row">
+                                <div class="col login-registro-nt">
+                                    <label class="label-login-nt">Nombre </label>
+                                    <input  class="input-login-nt" type="text" name="nombre" required>
+                                </div>
+                                <div class="col login-registro-nt">
+                                    <label class="label-login-nt">Telefono </label>
+                                    <input  class="input-login-nt" type="tel" name="telefono" required>
+                                </div>
+                            </div>
                             <label class="label-login">Correo electrónico </label>
                             <input  class="input-login" type="text" name="usu" required>
                             <label class="label-login">Contraseña </label>

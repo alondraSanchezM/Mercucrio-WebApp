@@ -6,8 +6,8 @@
 
 <body>
     <div class="login-form">
-        <div class="container">
-            <div class="row justify-content-left align-items-center">
+        <div class="container ">
+            <div class="row justify-content-left align-items-center container-responsive-login-registro">
                 <div class="col-4 imagenes-login">
                     <img class="img-logo" src="images/mercurio-logo.svg" alt="Logo de la Página">
                     <img class="img-fondo" src="images/login-imagen.svg" alt="Imagen de fondo">
