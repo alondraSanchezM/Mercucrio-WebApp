@@ -95,7 +95,7 @@ body {
     text-align: center;
 }
 
-.label-login-nt{
+.label-login-nt {
     font-family: var(--fuente-principal);
     font-size: 2.8rem;
     margin-top: 1rem;
@@ -111,10 +111,10 @@ body {
     border-radius: 2.2rem;
     min-width: 20rem;
     max-width: 28rem;
-
     background-color: var(--color-input);
 }
-.login-registro-nt{
+
+.login-registro-nt {
     max-width: 29;
 }
 
@@ -341,9 +341,9 @@ body {
 
 .card-mis-productos-datos-finales {
     padding: 2rem 3.7rem 1.7rem 1rem;
-    max-width: 20rem;
+    min-width: 20rem;
     width: 100%;
-    height: 18rem;
+    height: auto;
 }
 
 .card-mis-productos-categoria {
@@ -353,6 +353,7 @@ body {
     color: var(--color-fuente);
     font-weight: bold;
     text-transform: uppercase;
+    margin-bottom: 7rem;
 }
 
 .card-mis-productos-ubicacion {
@@ -372,9 +373,37 @@ body {
     text-align: right;
 }
 
+/* Cards de datos Personales */
 
+.datos-cuenta-info-titulo {
+    margin: 2rem 0 0 3rem;
+    font-size: 2.5rem;
+    font-family: var(--fuente-principal);
+    color: var(--color-fuente);
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
+.datos-cuenta-info-label {
+    margin: 1.5rem 6rem 1.5rem 1rem;
+    font-size: 3.5rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: normal;
+    text-align: right;
+}
 
+.datos-cuenta-info-texto {
+    margin: 1.5rem 0 1.5rem 1rem;
+    font-size: 3.5rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: lighter;
+}
+
+.datos-cuenta-info{
+    margin: 3rem 0;
+}
 
 /* Cards de intercambios */
 
@@ -418,7 +447,7 @@ body {
     font-weight: lighter;
 }
 
-.alineamiento-izq{
+.alineamiento-izq {
     text-align: right;
 }
 
@@ -470,10 +499,8 @@ a:link, a:visited, a:active {
     text-transform: uppercase;
 }
 
-
-
-
 /* Sobre nosotros */
+
 .circulo {
     width: 30.5rem;
     height: 30.5rem;
@@ -484,12 +511,12 @@ a:link, a:visited, a:active {
     margin: auto;
 }
 
-.perfil{
+.perfil {
     margin-top: 5rem;
     height: 43rem;
 }
 
-.foto-perfil{
+.foto-perfil {
     width: 26rem;
     height: 26rem;
     -moz-border-radius: 50%;
@@ -497,8 +524,7 @@ a:link, a:visited, a:active {
     border-radius: 50%;
 }
 
-.nombre-perfil-sobre{
-    
+.nombre-perfil-sobre {
     margin: 3.7rem 1rem 0 0;
     font-size: 2.9rem;
     font-family: var(--fuente-secundaria);
@@ -506,7 +532,7 @@ a:link, a:visited, a:active {
     text-align: center;
 }
 
-.redes-sociales-icon{
+.redes-sociales-icon {
     margin: 0.9rem 0.8rem;
 }
 
@@ -518,35 +544,30 @@ a:link, a:visited, a:active {
     .grid-productos {
         grid-template-columns: repeat(1, 1fr);
     }
-    .container-responsive-login-registro{
+    .container-responsive-login-registro {
         display: flex;
         flex-direction: column;
     }
-    .col-4{
+    .col-4 {
         width: 80%;
     }
-    
     .formulario-login-card {
         min-width: 55rem;
         width: 70%;
     }
-    
-.input-login, .input-login-nt{
-    max-width: 45rem;
-    min-width: 45rem;
-}
-    .container{
+    .input-login, .input-login-nt {
+        max-width: 45rem;
+        min-width: 45rem;
+    }
+    .container {
         margin-left: 0rem;
         margin-right: 3rem;
     }
-    .imagenes-login{
+    .imagenes-login {
         margin-left: 10rem;
         justify-content: center;
-
     }
 }
-
-
 
 /* Medium devices (tablets, 768px and up) */
 
@@ -560,8 +581,7 @@ a:link, a:visited, a:active {
     .card-mis-productos-texto {
         max-width: 42rem;
     }
-    
-    .container-responsive-login-registro{
+    .container-responsive-login-registro {
         display: flex;
         flex-direction: row;
     }
@@ -569,11 +589,10 @@ a:link, a:visited, a:active {
         min-width: 55rem;
         width: 70%;
     }
-    
-.input-login, .input-login-nt{
-    max-width: 45rem;
-    min-width: 45rem;
-}
+    .input-login, .input-login-nt {
+        max-width: 45rem;
+        min-width: 45rem;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -583,25 +602,19 @@ a:link, a:visited, a:active {
         grid-template-columns: repeat(3, 1fr);
     }
     .clientes-registrados {
-        width: 95rem;
+        width: 90rem;
     }
     .card-mis-productos-texto {
         max-width: 52rem;
     }
-    
-    .card-mis-productos-categoria {
-        margin-bottom: 7rem;
+    .formulario-login-card {
+        min-width: 55rem;
+        width: 70%;
     }
-    
-.formulario-login-card {
-    min-width: 55rem;
-    width: 70%;
-}
-
-.input-login, .input-login-nt{
-    max-width: 45rem;
-    min-width: 45rem;
-}
+    .input-login, .input-login-nt {
+        max-width: 45rem;
+        min-width: 45rem;
+    }
 }
 
 /*  X-Large devices (large desktops, 1200px and up) */
@@ -610,17 +623,20 @@ a:link, a:visited, a:active {
     .grid-productos {
         grid-template-columns: repeat(4, 1fr);
     }
-    
-.formulario-login-card {
-    height: 100%;
-    min-width: 70rem;
-    width: 70%;
-}
-
-.input-login{
-    max-width: 60rem;
-
-}
+    .clientes-registrados {
+        width: 95rem;
+    }
+    .formulario-login-card {
+        height: 100%;
+        min-width: 70rem;
+        width: 70%;
+    }
+    .input-login {
+        max-width: 60rem;
+    }
+    .card-mis-productos-datos-finales {
+        height: 18rem;
+    }
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
@@ -635,7 +651,7 @@ a:link, a:visited, a:active {
     .card-mis-productos-texto {
         max-width: 72rem;
     }
-    .card-intercambios-texto{
+    .card-intercambios-texto {
         max-width: 30rem;
     }
 }
@@ -650,11 +666,10 @@ a:link, a:visited, a:active {
     .card-mis-productos-texto {
         max-width: 102rem;
     }
-    .card-intercambios-texto{
+    .card-intercambios-texto {
         max-width: 35rem;
     }
-        
-    .card-intercambios-espacio   {
-     margin: 0rem 5rem ;   
+    .card-intercambios-espacio {
+        margin: 0rem 5rem;
     }
 }
