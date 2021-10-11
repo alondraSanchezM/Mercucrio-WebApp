@@ -1,7 +1,11 @@
 <?PHP session_start();
     $nombre=$_REQUEST['nombre'];
+    $telefono=$_REQUEST['telefono'];
     $usu=$_REQUEST['usu'];
     $pass=$_REQUEST['passwd'];
+
+    date_default_timezone_set("America/Mexico_City");
+    $fecha = date('Y-m-d');
 
     $link=mysqli_connect("localhost","root","");
     mysqli_select_db($link,"mercurioDB");
@@ -9,7 +13,13 @@
     if($row=mysqli_fetch_array($result)){//Si se encontró el usuario
         header("Location:errorRegister.php");
     }else{
-        $result=mysqli_query($link,"insert into Users(tipo,nombre,correo,pass) values (1,'$nombre','$usu','$pass')");
+        $result=mysqli_query($link,"insert into Users(tipo,nombre,correo,pass,telefono,fecha_de_registro)
+                                    values (1,'$nombre','$usu','$pass','$telefono','$fecha')");
+
+        $result=mysqli_query($link,"select id_user from users where correo='$usu'");
+        $row=mysqli_fetch_array($result);
+        
+        $_SESSION['id']=$row['id_user'];
         $_SESSION['nombre']=$nombre; 
         $_SESSION['username']=$usu; //Variables de sesion
         $_SESSION['tipoUsuario']=1; //Variables de sesion

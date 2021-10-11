@@ -1,4 +1,10 @@
-<?php          
+<?php session_start();
+if (isset($_SESSION['tipoUsuario'])){
+    if($_SESSION['tipoUsuario']==1) header("Location:cliente/body-principal.php");
+    if($_SESSION['tipoUsuario']==0) header("Location:administrador/body-principal.php");
+}
+
+$subCarp="./";         
 require_once 'head.php';
 ?>
 
