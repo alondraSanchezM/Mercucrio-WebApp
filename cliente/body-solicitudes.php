@@ -16,6 +16,7 @@
         <?php
             $link=mysqli_connect("localhost","root","");
             mysqli_select_db($link,"mercurioDB");
+            $link->set_charset("utf8");
             $id=intval($_SESSION['id']);
             $result=mysqli_query($link,"select * from productos where id_user=$id and status!=2");//Productos no eliminados del usuario
             echo "<div class='d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container'>";

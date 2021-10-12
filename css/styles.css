@@ -624,7 +624,7 @@ a:link, a:visited, a:active {
         grid-template-columns: repeat(4, 1fr);
     }
     .clientes-registrados {
-        width: 95rem;
+        width: 125rem;
     }
     .formulario-login-card {
         height: 100%;

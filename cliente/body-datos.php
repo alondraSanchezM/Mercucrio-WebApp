@@ -19,6 +19,7 @@
                 $id=intval($_SESSION['id']);
                 $link=mysqli_connect("localhost","root","");
                 mysqli_select_db($link,"mercurioDB");
+                $link->set_charset("utf8");
                 $result=mysqli_query($link,"select * from Users where id_user=$id");
                 while($row=mysqli_fetch_array($result)){
                     $correo=$row['correo'];

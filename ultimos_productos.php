@@ -1,6 +1,7 @@
 <?php
     $link=mysqli_connect("localhost","root","");
     mysqli_select_db($link,"mercurioDB");
+    $link->set_charset("utf8");
     $result=mysqli_query($link,"select * from Productos where status='0'");
     echo "<div class='grid-productos'>";
         while($row=mysqli_fetch_array($result)){ 
