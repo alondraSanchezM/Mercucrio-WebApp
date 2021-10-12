@@ -35,25 +35,24 @@
                 $us_solicitante=$producto_solicitante['id_user'];
                 
                 if($us_solicitado==$id || $us_solicitante==$id){
-                        echo "<div class='clientes-registrados card-borde'>";
+                        echo "<div class=' d-flex   justify-content-evenly align-content-center card-intercambios card-borde'>";
                         //Datos producto solitado
                         $id_solicitado=$producto_solicitado['id_producto'];
                         $nom_solicitado=$producto_solicitado['nombre'];
                         $ima_solicitado=$us_solicitado.$id_solicitado.'.jpg';
                         $desp_solicitado=$producto_solicitado['descripcion'];
                         echo "<div class='d-flex  flex-row align-self-start'> <img  class='card-intercambios-imagen' src='../images/productos/$ima_solicitado' >";
-                        echo "<div class='d-flex  flex-column card-intercambios-texto align-self-start'> <p class='card-intercambios-titulo'>$nom_solicitado</p>  <p class='card-intercambios-descripcion'>$desp_solicitado</p> </div> ";
-                        echo "<div class='card-intercambios-espacio'> <button class='card-intercambios-boton card-borde' name='enviar' > Información del intercambio </button>";
+                        echo "<div class='d-flex  flex-column card-intercambios-texto justify-self-start'> <p class='card-intercambios-titulo'>$nom_solicitado</p>  <p class='card-intercambios-descripcion'>$desp_solicitado</p> </div></div> ";
+                        echo "<div class='card-intercambios-espacio d-flex  flex-row align-self-center'> <button class='card-intercambios-boton card-borde' name='enviar' > Información del intercambio </button>";
                         echo "</div>";
                         //Datos producto solicitante
                         $id_solicitante=$producto_solicitante['id_producto'];
                         $nom_solicitante=$producto_solicitante['nombre'];
                         $ima_solicitante=$us_solicitante.$id_solicitante.'.jpg';
                         $desp_solicitante=$producto_solicitante['descripcion'];
-                        echo "<div class='d-flex  flex-row align-self-end'> ";
-                        echo "<div class='d-flex  flex-column card-intercambios-texto align-self-start'> <p class='card-intercambios-titulo alineamiento-izq'>$nom_solicitante</p>  <p class='alineamiento-izq card-intercambios-descripcion'>$desp_solicitante</p> </div> ";
+                        echo "<div class='d-flex  flex-row justify-self-end'> ";
+                        echo "<div class='d-flex  flex-column card-intercambios-texto justify-self-start'> <p class='card-intercambios-titulo alineamiento-izq'>$nom_solicitante</p>  <p class='alineamiento-izq card-intercambios-descripcion'>$desp_solicitante</p> </div> ";
                         echo " <img  class='card-intercambios-imagen' src='../images/productos/$ima_solicitante' /> </div> </div>";
-                        echo "</div>";
                     }
             }
             echo "</div>";

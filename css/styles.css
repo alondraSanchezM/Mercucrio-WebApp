@@ -240,10 +240,11 @@ body {
     grid-template-columns: repeat(1, 1fr);
 }
 
-.clientes-registrados {
+.clientes-registrados, .card-intercambios    {
     width: 45rem;
     min-height: 20rem;
     margin-bottom: 5rem;
+    flex-direction: row;
 }
 
 .ultimos-productos {
@@ -410,7 +411,7 @@ body {
 .card-intercambios-imagen {
     width: 20rem;
     height: 18rem;
-    margin: 1rem 1rem 0 1rem;
+    margin: 1rem;
     border: 0px solid transparent;
     border-radius: 22px;
 }
@@ -438,7 +439,7 @@ body {
 .card-intercambios-boton {
     text-decoration: none;
     width: 21rem;
-    margin: 6rem 0;
+    margin: 2rem 0;
     padding: 1rem 2rem;
     background-color: var(--color-secundario);
     color: var(--blanco);
@@ -567,6 +568,15 @@ a:link, a:visited, a:active {
         margin-left: 10rem;
         justify-content: center;
     }
+    
+    .card-intercambios {
+        width: 50rem;
+        flex-direction: column;
+
+    }
+    .card-intercambios-texto {
+        max-width: 30rem;
+    }
 }
 
 /* Medium devices (tablets, 768px and up) */
@@ -593,6 +603,15 @@ a:link, a:visited, a:active {
         max-width: 45rem;
         min-width: 45rem;
     }
+    
+    .card-intercambios {
+        width: 70rem;
+        flex-direction: column;
+
+    }
+    .card-intercambios-texto {
+        max-width: 50rem;
+    }
 }
 
 /* Large devices (desktops, 992px and up) */
@@ -603,6 +622,15 @@ a:link, a:visited, a:active {
     }
     .clientes-registrados {
         width: 90rem;
+
+    }
+    .card-intercambios {
+        width: 70rem;
+        flex-direction: column;
+
+    }
+    .card-intercambios-texto {
+        max-width: 50rem;
     }
     .card-mis-productos-texto {
         max-width: 52rem;
@@ -623,8 +651,8 @@ a:link, a:visited, a:active {
     .grid-productos {
         grid-template-columns: repeat(4, 1fr);
     }
-    .clientes-registrados {
-        width: 125rem;
+    .clientes-registrados, .card-intercambios {
+        min-width: 115rem;
     }
     .formulario-login-card {
         height: 100%;
@@ -645,14 +673,14 @@ a:link, a:visited, a:active {
     .grid-productos {
         grid-template-columns: repeat(4, 1fr);
     }
-    .clientes-registrados {
-        width: 115rem;
+    .clientes-registrados, .card-intercambios {
+        width: 132rem;
     }
     .card-mis-productos-texto {
         max-width: 72rem;
     }
     .card-intercambios-texto {
-        max-width: 30rem;
+        max-width: 34rem;
     }
 }
 
@@ -660,7 +688,7 @@ a:link, a:visited, a:active {
     .grid-productos {
         grid-template-columns: repeat(5, 1fr);
     }
-    .clientes-registrados {
+    .clientes-registrados, .card-intercambios {
         width: 145rem;
     }
     .card-mis-productos-texto {
