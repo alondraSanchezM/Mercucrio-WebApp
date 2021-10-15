@@ -6,6 +6,32 @@
     require_once 'header-administrador.php';
 ?>
 
+<?php
+    //Handle delete
+    if (isset($_GET['delete_id'])) {
+        $delete_id = (int) $_GET['delete_id'];
+    
+        $link=mysqli_connect("localhost","root","");
+        mysqli_select_db($link,"mercurioDB");
+        $link->set_charset("utf8");
+
+        //Colocar usuario en inactivo
+        mysqli_query($link,"UPDATE users SET status = '1' WHERE id_user = '$delete_id'"); 
+        //Eliminar productos disponibles del usuario 
+        mysqli_query($link,"DELETE FROM productos WHERE id_user = '$delete_id' AND status = 0"); 
+        //Eliminar las imagenes del producto 
+        $ima=mysqli_query($link,"DELETE FROM imagenes WHERE id_user = '$delete_id'"); 
+    }
+?>
+
+<script LANGUAGE="JavaScript">
+    function confirmSubmit(){
+        var eli=confirm("¿Está seguro de eliminar este usuario?");
+        if (eli) return true ;
+        else return false ;
+    }
+</script>
+
     <main class="principal">
 
         <div class="d-flex align-items-center justify-content-around">
@@ -19,7 +45,7 @@
             $link=mysqli_connect("localhost","root","");
             mysqli_select_db($link,"mercurioDB");
             $link->set_charset("utf8");
-            $result=mysqli_query($link,"select * from users where tipo=1");
+            $result=mysqli_query($link,"SELECT * from users where tipo=1 AND status = 0");
             echo "<div class='d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container'>";
                 while($row=mysqli_fetch_array($result)){
                     echo "<div class='clientes-registrados card-borde'>";
@@ -49,7 +75,7 @@
                     echo "<p  class='card-mis-productos-fecha col align-self-end'> TOTAL DE PRODUCTOS REGISTRADOS: $totProd</p> 
                         <p  class='card-mis-productos-fecha col align-self-end'> TOTAL DE INTERCAMBIOS REALIZADOS: $totInter</p> 
                         <p  class='card-mis-productos-fecha col align-self-end'> Fecha de registro: $fecha</p> </div></div></div> ";
-                    //echo "<div class='d-flex  flex-row align-self-start'> <img  class='card-intercambios-imagen' src='../images/trash.svg'>";
+                    echo "<div class='d-flex  flex-row align-self-start'><a onclick=\"return confirmSubmit()\"href=\"?delete_id={$row['id_user']}\"><img class='card-intercambios-imagen' src='../images/trash.svg'></a></div> ";
                 }
             echo "</div>";
         ?>
