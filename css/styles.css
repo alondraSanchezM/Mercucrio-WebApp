@@ -5,6 +5,7 @@
     --blanco: #fff;
     --color-fondo: #F7FAFB;
     --color-secundario: #C60F7B;
+    --color-secundario-boton: #4A8AA1;
     --color-input: #F2F2F2;
     --color-texto-footer: #909090;
     --color-texto-menu: #202020;
@@ -341,9 +342,9 @@ body {
 }
 
 .card-mis-productos-datos-finales {
-    padding: 2rem 3.7rem 1.7rem 1rem;
+    margin: 2rem 3.7rem 1.7rem 1rem;
     min-width: 20rem;
-    width: 100%;
+    max-width: 20rem;
     height: auto;
 }
 
@@ -372,6 +373,77 @@ body {
     color: var(--color-fuente);
     font-weight: lighter;
     text-align: right;
+}
+
+
+
+/* Cards Solicitudies */
+.container-solicitudes{    
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.container-solicitudes-titulo{
+    margin: 2rem 0 2rem 1rem;
+    font-size: 3.6rem;
+    font-family: var(--fuente-principal);
+    color: var(--color-fuente);
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.card-solicitudes-nombre{
+    font-size: 2.2rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    text-align: center;
+
+}
+.card-solicitudes-titulo{
+    font-size: 2.4rem;
+    font-family: var(--fuente-principal);
+    color: var(--color-fuente);
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+
+}
+
+.card-solicitudes-mensaje{
+    font-size: 2rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    text-align: justify;
+
+}
+
+.card-solicitudes-body    {
+    margin: 0 2rem 2rem 2rem ;
+}
+
+.card-solicitudes-boton ,.card-solicitudes-boton2 {
+    text-decoration: none;
+    width: 21rem;
+    margin-top: 2rem ;
+    padding: 1rem 2rem;
+    background-color: var(--color-secundario);
+    font-family: var(--fuente-secundaria);
+    color: var(--blanco);
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: lighter;
+}
+.card-solicitudes-boton2 {
+    background-color: var(--color-secundario-boton);
+}
+
+.card-solicitudes    {
+    max-width: 90rem;
+    min-height: 45rem;
+    margin: 3rem 1rem;
+    flex-direction: row;
 }
 
 /* Cards de datos Personales */
@@ -665,6 +737,16 @@ a:link, a:visited, a:active {
     .card-mis-productos-datos-finales {
         height: 18rem;
     }
+    
+.container-solicitudes{
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.card-solicitudes    {
+    width: 58rem;
+}
+
+
 }
 
 /* XX-Large devices (larger desktops, 1400px and up) */
@@ -681,6 +763,10 @@ a:link, a:visited, a:active {
     }
     .card-intercambios-texto {
         max-width: 34rem;
+    }
+    
+    .card-solicitudes    {
+        width: 67rem;
     }
 }
 
@@ -700,4 +786,16 @@ a:link, a:visited, a:active {
     .card-intercambios-espacio {
         margin: 0rem 5rem;
     }
+    
+    .card-solicitudes    {
+        width: 72rem;
+    }
+    
+}
+
+@media (min-width: 1700px) {
+    .card-solicitudes    {
+        width: 80rem;
+    }
+    
 }

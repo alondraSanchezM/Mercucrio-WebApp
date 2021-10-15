@@ -20,6 +20,9 @@
             $id=intval($_SESSION['id']);
             $result=mysqli_query($link,"select * from productos where id_user=$id and status!=2");//Productos no eliminados del usuario
             echo "<div class='d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container'>";
+            echo "<div class='container-solicitudes'> <div class='d-flex  flex-column align-content-between'>";
+            echo "<h2 class='container-solicitudes-titulo'> Enviadas</h2>";
+
             while($row=mysqli_fetch_array($result)){
                 //Solicitante B         Solicitado A
                 $id_pr=$row['id_producto'];
@@ -27,13 +30,11 @@
                 //Enviadas 
                 $result2=mysqli_query($link,"select * from solicitudes where producto_solicitante=$id_pr");//Solicitudes hechas
                 while($row2=mysqli_fetch_array($result2)){
-                    echo "<div class='clientes-registrados card-borde'>";
-                        echo "Solicitud hecha";
+                    echo "<div class='card-solicitudes d-flex flex-column justify-content-between card-borde'>";
                         //Solicitante
                         $imB=$id.$id_pr.'.jpg';
                         $men=$row2['mensaje'];
                         //Solicitado
-                        echo "<br>";
                         $id_A=$row2['producto_solicitado'];
                         $prod_solicitado=mysqli_query($link,"select * from productos where id_producto=$id_A");
                         $rowA=mysqli_fetch_array($prod_solicitado);
@@ -42,13 +43,48 @@
                         $imA=$id_u_A.$id_A.'.jpg';
                         $estA=$rowA['estado'];
                         $munA=$rowA['municipio'];
+
+                    echo "<div class='d-flex  flex-row justify-content-between'>";
+                    
+                    echo " <img  class='card-intercambios-imagen' src='../images/productos/$imB' >";
+                    echo "<div class='d-flex  flex-column align-content-between justify-content-evenly'>";
+                    echo "<p class='card-solicitudes-nombre'> $nom_pr </p>";
+                    echo "<p class='card-solicitudes-nombre'> <-----------> </p>";
+                    echo "<p class='card-solicitudes-nombre'> $nom_A </p>";
                     echo "</div>";
+                    
+                    echo " <img  class='card-intercambios-imagen' src='../images/productos/$imA' >";
+                    echo "</div>";
+
+                    echo " <div class='card-solicitudes-body '><div class='d-flex  flex-row justify-content-between '>";
+                    echo " <p class='card-solicitudes-titulo'> Mensaje </p>";
+                    echo "<div  class='d-flex  flex-row align-self-center '><img class='card-mis-productos-ubicacion' src='".$subCarp."images/ubicacion.svg'> <p  class='card-mis-productos-ubicacion'>$munA, $estA</p></div> ";    
+                    echo "</div>";
+
+                    echo "<p  class='card-solicitudes-mensaje'> $men </p>";
+                    
+                    echo "</div> <div class='card-solicitudes-body'>";  
+                    echo "<div class=' d-flex  flex-row align-self-end justify-content-end'> <button class='card-solicitudes-boton card-borde' name='enviar' > Cancelar </button> </div>";
+                        
+                    echo "</div></div>";
+
+
+
                 }
+            }
+            echo "</div > <div class='d-flex  flex-column align-content-between justify-content-around '>";
+            echo "<h2 class='container-solicitudes-titulo'> Recibidas</h2>";
+            
+            $result=mysqli_query($link,"select * from productos where id_user=$id and status!=2");//Productos no eliminados del usuario
+            while($row=mysqli_fetch_array($result)){
+                //Solicitante B         Solicitado A
+                $id_pr=$row['id_producto'];
+                $nom_pr=$row['nombre'];
+                
                 //Recibidas 
                 $result2=mysqli_query($link,"select * from solicitudes where producto_solicitado=$id_pr");//Solicitudes recibidas
                 while($row2=mysqli_fetch_array($result2)){
-                    echo "<div class='clientes-registrados card-borde'>";
-                        echo "Solicitud recibida";
+                    echo "<div class='card-solicitudes d-flex flex-column justify-content-between card-borde'>";
                         //Solicitado
                         $imA=$id.$id_pr.'.jpg';
                         $estA=$row['estado'];
@@ -61,10 +97,34 @@
                         $id_u_B=$rowB['id_user'];
                         $imB=$id_u_B.$id_B.'.jpg';
                         $men=$row2['mensaje'];
+                        
+                    echo "<div class='d-flex  flex-row justify-content-between'>";
+                    
+                    echo " <img  class='card-intercambios-imagen' src='../images/productos/$imA' >";
+                    echo "<div class='d-flex  flex-column align-content-between justify-content-evenly'>";
+                    echo "<p class='card-solicitudes-nombre'> $nom_pr </p>";
+                    echo "<p class='card-solicitudes-nombre'> <-----------> </p>";
+                    echo "<p class='card-solicitudes-nombre'> $nom_B </p>";
                     echo "</div>";
+                    
+                    echo " <img  class='card-intercambios-imagen' src='../images/productos/$imB' >";
+                    echo "</div>";
+
+                    echo " <div class='card-solicitudes-body '><div class='d-flex  flex-row justify-content-between '>";
+                    echo " <p class='card-solicitudes-titulo'> Mensaje </p>";
+                    echo "<div  class='d-flex  flex-row align-self-center '><img class='card-mis-productos-ubicacion' src='".$subCarp."images/ubicacion.svg'> <p  class='card-mis-productos-ubicacion'>$munA, $estA</p></div> ";    
+                    echo "</div>";
+
+                    echo "<p  class='card-solicitudes-mensaje'> $men </p>";
+                    
+                    echo "</div> <div class='card-solicitudes-body'>";
+                    echo "<div class=' d-flex  flex-row justify-content-between'> <button class='card-solicitudes-boton2 card-borde' name='enviar' > Aceptar </button> ";
+                    echo "<button class='card-solicitudes-boton card-borde' name='enviar' > Declinar </button> </div>";
+                    echo "</div></div>";
+
                 }
             }
-            echo "</div>";
+            echo "</div></div></div>";
             
         ?>
     </main>

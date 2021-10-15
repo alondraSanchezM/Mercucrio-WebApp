@@ -3,10 +3,10 @@
 
         <div class="imagen-footer d-flex align-items-center">
             <div>
-                <a href="index.php">
-                    <?php
-                        echo " <img class='img-logo-fondo' src='".$subCarp."images/logo-footer.svg' alt='Logo de la Página'>";
-                    ?>
+                <?php
+                    echo "<a href='".$subCarp."index.php'>";
+                    echo " <img class='img-logo-fondo' src='".$subCarp."images/logo-footer.svg' alt='Logo de la Página'>";
+                ?>
                 </a>
             </div>
         </div>
