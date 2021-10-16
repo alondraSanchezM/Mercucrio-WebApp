@@ -241,11 +241,14 @@ body {
     grid-template-columns: repeat(1, 1fr);
 }
 
-.clientes-registrados, .card-intercambios    {
+.clientes-registrados, .card-intercambios  .card-administrador-cl-pr  {
     width: 45rem;
     min-height: 20rem;
     margin-bottom: 5rem;
     flex-direction: row;
+}
+.contenedor-administrador-cl-pr{
+    margin-bottom: 5rem;
 }
 
 .ultimos-productos {
@@ -342,7 +345,7 @@ body {
 }
 
 .card-mis-productos-datos-finales {
-    margin: 2rem 3.7rem 1.7rem 1rem;
+    margin: 2rem 3.7rem 0 1rem;
     min-width: 20rem;
     max-width: 20rem;
     height: auto;
@@ -538,6 +541,32 @@ body {
     text-decoration: none;
 }
 
+
+.card-clientes-datos-finales {
+    margin: 2rem 3.7rem 0 1rem;
+    min-width: 30rem;
+    width: auto;
+    height: 20rem;
+}
+
+.totales-num-clientes{
+    margin: 0.8rem 0 1rem 0;
+    font-size: 2.4rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: bold;
+    text-align: right;
+}
+
+.administrador-cl-texto {
+    margin: 2rem 1rem 0 1rem;
+    font-size: 3.4rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: lighter;
+}
+
+
 /* Footer */
 
 .footer {
@@ -660,6 +689,9 @@ a:link, a:visited, a:active {
     .clientes-registrados {
         width: 75rem;
     }
+    .card-administrador-cl-pr{
+        width: 90rem;
+    }
     .card-mis-productos-texto {
         max-width: 42rem;
     }
@@ -696,6 +728,10 @@ a:link, a:visited, a:active {
         width: 90rem;
 
     }
+    
+    .card-administrador-cl-pr{
+        width: 90rem;
+    }
     .card-intercambios {
         width: 70rem;
         flex-direction: column;
@@ -725,6 +761,10 @@ a:link, a:visited, a:active {
     }
     .clientes-registrados, .card-intercambios {
         min-width: 115rem;
+    }
+    
+    .card-administrador-cl-pr{
+        width: 94rem;
     }
     .formulario-login-card {
         height: 100%;
@@ -758,6 +798,10 @@ a:link, a:visited, a:active {
     .clientes-registrados, .card-intercambios {
         width: 132rem;
     }
+    
+    .card-administrador-cl-pr{
+        width: 116rem;
+    }
     .card-mis-productos-texto {
         max-width: 72rem;
     }
@@ -768,6 +812,11 @@ a:link, a:visited, a:active {
     .card-solicitudes    {
         width: 67rem;
     }
+    
+.card-clientes-datos-finales {
+    min-width: 45rem;
+    width: auto;
+}
 }
 
 @media (min-width: 1500px) {
@@ -776,6 +825,10 @@ a:link, a:visited, a:active {
     }
     .clientes-registrados, .card-intercambios {
         width: 145rem;
+    }
+    
+    .card-administrador-cl-pr{
+        width: 126rem;
     }
     .card-mis-productos-texto {
         max-width: 102rem;
@@ -796,6 +849,9 @@ a:link, a:visited, a:active {
 @media (min-width: 1700px) {
     .card-solicitudes    {
         width: 80rem;
+    }
+    .card-administrador-cl-pr{
+        width: 145rem;
     }
     
 }

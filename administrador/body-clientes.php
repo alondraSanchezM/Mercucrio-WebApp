@@ -48,7 +48,7 @@
             $result=mysqli_query($link,"SELECT * from users where tipo=1 AND status = 0");
             echo "<div class='d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container'>";
                 while($row=mysqli_fetch_array($result)){
-                    echo "<div class='clientes-registrados card-borde'>";
+                    echo "<div class='contenedor-administrador-cl-pr d-flex flex-row' ><div class='card-administrador-cl-pr card-borde'>";
                     $id_u=$row['id_user'];
                     $nom=$row['nombre'];
                     $corr=$row['correo'];
@@ -70,12 +70,13 @@
                     
                     echo "<div class='d-flex  flex-row align-self-start'> <img  class='card-mis-productos-imagen' src='../images/user.svg' >";
                     echo "<div class='d-flex  flex-column card-mis-productos-texto align-self-start'>
-                            <p class='card-mis-productos-titulo'>$nom</p> <p class='card-mis-productos-titulo'>#Id. $id_u</p> <p class='card-mis-productos-titulo'>$corr</p> </div> ";
-                    echo "<div class='d-flex  flex-column card-mis-productos-datos-finales col align-self-end' > ";                  
-                    echo "<p  class='card-mis-productos-fecha col align-self-end'> TOTAL DE PRODUCTOS REGISTRADOS: $totProd</p> 
-                        <p  class='card-mis-productos-fecha col align-self-end'> TOTAL DE INTERCAMBIOS REALIZADOS: $totInter</p> 
-                        <p  class='card-mis-productos-fecha col align-self-end'> Fecha de registro: $fecha</p> </div></div></div> ";
+                            <p class='administrador-cl-texto'>$nom</p> <p class='administrador-cl-texto'>#Id. $id_u</p> <p class='administrador-cl-texto'>$corr</p> </div> ";
+                    echo "<div class='d-flex  flex-column card-clientes-datos-finales justify-content-end' > ";                  
+                    echo "<p  class='totales-num-clientes '> TOTAL DE PRODUCTOS REGISTRADOS: $totProd</p> 
+                        <p  class='totales-num-clientes '> TOTAL DE INTERCAMBIOS REALIZADOS: $totInter</p> 
+                         <p  class='card-mis-productos-fecha  '> Fecha de registro: $fecha</p> </div></div></div> ";
                     echo "<div class='d-flex  flex-row align-self-start'><a onclick=\"return confirmSubmit()\"href=\"?delete_id={$row['id_user']}\"><img class='card-intercambios-imagen' src='../images/trash.svg'></a></div> ";
+                    echo "</div>";
                 }
             echo "</div>";
         ?>
