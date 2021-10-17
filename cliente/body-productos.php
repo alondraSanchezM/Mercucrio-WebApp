@@ -19,10 +19,11 @@
             mysqli_select_db($link,"mercurioDB");
             $link->set_charset("utf8");
             $id=intval($_SESSION['id']);
-            $result=mysqli_query($link,"select * from productos where id_user=$id");
+            $result=mysqli_query($link,"select * from productos where id_user=$id and status=0");
             echo "<div class='d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container'>";
-                while($row=mysqli_fetch_array($result)){
-                    echo "<div class='clientes-registrados card-borde'>";
+            while($row=mysqli_fetch_array($result)){
+                echo "<a href='ver-producto.php?id={$row['id_producto']}'><div class='clientes-registrados card-borde'>";
+                //?variable1=valor1
                     $id_p=$row['id_producto'];
                     $ima=$id.$id_p.'.jpg';
                     $nom=$row['nombre'];
@@ -35,7 +36,7 @@
                     echo "<div class='d-flex  flex-column card-mis-productos-texto align-self-start'> <p class='card-mis-productos-titulo'>$nom</p>  <p class='card-mis-productos-descripcion'>$desp</p> </div> ";
                     echo "<div class='d-flex  flex-column card-mis-productos-datos-finales col ' > <p class='card-mis-productos-categoria'>$cat</p> ";
                     echo "<div  class='d-flex  flex-row align-self-end'><img class='card-mis-productos-ubicacion' src='".$subCarp."images/ubicacion.svg'> <p  class='card-mis-productos-ubicacion'>$mun, $est</p></div> ";                    
-                    echo "<p  class='card-mis-productos-fecha col align-self-end'> Publicado: $fecha</p> </div></div></div> ";
+                    echo "<p  class='card-mis-productos-fecha col align-self-end'> Publicado: $fecha</p> </div></div></div></a>";
                 }
             echo "</div>";
         ?>
