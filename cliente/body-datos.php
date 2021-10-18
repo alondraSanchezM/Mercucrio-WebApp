@@ -51,10 +51,10 @@
                     echo "<p type'password' class='datos-cuenta-info-texto'> $tel </p>";
                     echo "</div></div></div>";
                     
+                    echo "<button class=' card-borde ver-productos-boton' >Modificar información</button>";
                 }
             ?>
         </div>
-
     </main>
 
 <?php          

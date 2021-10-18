@@ -16,6 +16,9 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
+                        <?php          
+                            require_once './menu_categoria.php';
+                        ?>
 
                     </div>
                 </div>

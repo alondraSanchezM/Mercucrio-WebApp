@@ -3,8 +3,7 @@
 
         <div class="imagen-footer d-flex align-items-center">
             <div>
-                <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
-                    aria-controls="offcanvasExample">
+                <a data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                     <img class="imagen-menu" src="../images/menu.svg" alt="Logo de la Página">
                 </a>
 
@@ -16,7 +15,9 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body">
-
+                        <?php          
+                            require_once '../menu_categoria.php';
+                        ?>
                     </div>
                 </div>
             </div>
