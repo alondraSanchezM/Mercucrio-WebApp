@@ -241,7 +241,7 @@ body {
     grid-template-columns: repeat(1, 1fr);
 }
 
-.clientes-registrados, .card-intercambios  .card-administrador-cl-pr  {
+.clientes-registrados, .card-intercambios,  .card-administrador-cl-pr  {
     width: 45rem;
     min-height: 20rem;
     margin-bottom: 5rem;
@@ -525,6 +525,52 @@ body {
 
 .alineamiento-izq {
     text-align: right;
+}
+
+/* body ver producto */
+
+.linea-ver-productos {
+    background-color: var(--color-fuente);
+    min-height: 0.2rem;
+    margin-right: 0%;
+    width: 70%;
+}
+
+.cards-ver-producto{
+    width: 48%;
+    margin: 3.7rem 0 ;
+    height: 35rem;
+}
+
+.cards-ver-producto-carrusell{
+    width: 80%;
+    margin: 1.7rem 0 ;
+    height: 60rem;
+}
+.ver-productos-ubicacion-fecha{
+    width: 40rem;
+    margin-right: 10.41%;
+}
+
+.ver-productos-contenedor-boton{
+    width: 80%;
+}
+
+.ver-productos-boton ,.ver-productos-boton2 {
+    text-decoration: none;
+    width: 47%;
+    margin-top: 2rem ;
+    padding: 4rem 0;
+    background-color: var(--color-secundario);
+    font-family: var(--fuente-secundaria);
+    color: var(--blanco);
+    text-align: center;
+    font-size: 2.8rem;
+    font-weight: lighter;
+    
+}
+.ver-productos-boton2 {
+    background-color: var(--color-secundario-boton);
 }
 
 /* Body del adminitrador */

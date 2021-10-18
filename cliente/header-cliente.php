@@ -28,7 +28,7 @@
         </div>
 
         <div class="boton-central-publicar align-items-center">
-            <a class="boton-central-publicar-texto">
+            <a class="boton-central-publicar-texto" href="body-publicar-producto.php">
                 <p>Publicar Productos</p>
             </a>
         </div>
