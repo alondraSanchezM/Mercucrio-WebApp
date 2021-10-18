@@ -12,8 +12,56 @@
             <hr class="linea-der">
         </div>
 
-        <?php          
-            require_once '../ultimos_productos.php';
+        <?php    
+            $categorias=array("Vehículos","Tecnología","Electrodomésticos","Hogar y muebles","Moda y complementos" ,"Deportes y fitness","Herramientas y construcción" ,"Industria y oficina","Juegos y juguetes" ,"Bebés","Salud y belleza" ,"Arte y antigüedades" ,"Libros y comics","Coleccionables","Otros");
+
+            echo "
+            
+            <div class='d-flex  flex-column  align-items-center justify-content-around '>
+                <form action='actualiza.php' class='modificar-productos-contenedor' method='POST'>
+                    
+                    <div class='cards-modificar-producto-big card-borde d-flex flex-column'>
+                        <h3 class='modificar-producto-titulo'>Información general</h3>
+                            <label for='select' class='modificar-producto-titulo-label' >Categoría <span>*</span></label> ";
+                echo"<select class='form-select modificar-producto-select modificar-producto-titulo-label' name='categoria' required>";
+                foreach ($categorias as &$valor) {
+                    echo"<option class='modificar-producto-titulo-label' value=$valor>$valor</option>";
+                    
+                }
+                echo "</select>";
+                echo "   <label class='modificar-producto-titulo-label' >Título (máx 30 carácteres):<span>*</span></label> 
+                            <INPUT TYPE='text' NAME='nombre' class='form-control  modificar-producto-select modificar-producto-titulo-label ' > 
+                        <label class='modificar-producto-titulo-label' >Descripción del producto:<span>*</span></label> 
+                            <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='descripcion'></TEXTAREA>
+                    </div>
+                
+                    <div class='cards-modificar-producto-small card-borde d-flex flex-column'>
+
+                        <h3 class='modificar-producto-titulo'>qué te gustaría a cambio?</h3>
+                        <label class='modificar-producto-titulo-label' >Título:<span>*</span></label> 
+                            <INPUT TYPE='text' NAME='titulo_cambio'   class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
+                        <label class='modificar-producto-titulo-label' >Descripción:<span>*</span></label> 
+                            <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='descripcion_cambio' required></TEXTAREA>
+                            
+                    </div>";
+                
+                echo "              
+                        <div class='cards-modificar-producto-big card-borde d-flex flex-column'>
+                        </div>
+                        <div class='cards-modificar-producto-small card-borde d-flex flex-column'>
+                            <h3 class='modificar-producto-titulo'>ubicación del intercambio</h3>
+                            <label class='modificar-producto-titulo-label' >Estado:<span>*</span></label> 
+                                <INPUT TYPE='text' NAME='estado'  class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
+                            <label class='modificar-producto-titulo-label' > Municipio:<span>*</span></label> 
+                                <INPUT TYPE='text' NAME='municipio'   class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
+                            <label class='modificar-producto-titulo-label' >Calle y número:<span>*</span></label> 
+                                <INPUT TYPE='text' NAME='calle' class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
+                            <label class='modificar-producto-titulo-label' >Referencias:<span>*</span></label>  
+                                <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='referencia'></TEXTAREA>
+                        </div>";
+                echo "<input type='hidden' name='id' >";
+                echo "<INPUT TYPE='SUBMIT' class='modificar-productos-boton card-borde' value='Publicar producto'>";
+            echo "</form>";
         ?>
 
     </main>
