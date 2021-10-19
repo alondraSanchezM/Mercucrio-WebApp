@@ -15,7 +15,7 @@
 
         <?php
             if(isset($_GET['id'])){
-                $categorias=array("Vehículos","Tecnología","Electrodomésticos","Hogar y muebles","Moda y complementos" ,"Deportes y fitness","Herramientas y construcción" ,"Industria y oficina","Juegos y juguetes" ,"Bebés","Salud y belleza" ,"Arte y antigüedades" ,"Libros y comics","Coleccionables","Otros");
+                $categorias=array("Vehículos","Tecnología","Electrodomésticos",'Hogar y muebles','Moda y complementos' ,"Deportes y Fitness","Herramientas y construcción" ,"Industria y oficina","Juegos y juguetes" ,"Bebés","Salud y Belleza" ,"Arte y antigüedades" ,"Libros y comics","Coleccionables","Otros");
                 $id_p=$_GET["id"];
                 //echo $id_p;
                 $link=mysqli_connect("localhost","root","");

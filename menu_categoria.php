@@ -4,7 +4,7 @@
 </a>
 
 <a href="">
-    <p class="menu-categoria">Tecnologíav</p>
+    <p class="menu-categoria">Tecnología</p>
 </a>
 
 <a href="">

@@ -4,8 +4,7 @@
     require_once '../head.php';
     echo "<body>";
     require_once 'header-cliente.php';
-?>
-<?php
+
     if (isset($_GET['delete_id'])) {//Borrar producto
         $delete_id = (int) $_GET['delete_id'];
         echo "AQUI";
@@ -67,7 +66,7 @@
                     </div>
                 </div>";
         echo "<div class=' d-flex  flex-row ver-productos-contenedor-boton justify-content-between '>  <div class='cards-ver-producto card-borde'>
-                    <p class='datos-cuenta-info-titulo'> Descripión del producto </p>
+                    <p class='datos-cuenta-info-titulo'> Descripción del producto </p>
                     <p class='card-mis-productos-descripcion'>$desp</p>
                 </div> ";
                 
@@ -90,15 +89,12 @@
                 </div>";
 
         echo"</div></main>";
+
         
     }else{//No se le pasa el id.
         header("Location:body-productos.php");
     }
-    
-?> 
-
-
-<?php          
+             
     require_once '../footer.php';
 ?>
 
