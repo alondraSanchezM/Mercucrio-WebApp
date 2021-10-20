@@ -4,20 +4,15 @@
     require_once '../head.php';
     echo "<body>";
     require_once 'header-cliente.php';
-
-    if (isset($_GET['delete_id'])) {//Borrar producto
-        $delete_id = (int) $_GET['delete_id'];
-        echo "AQUI";
-        $link=mysqli_connect("localhost","root","");
-        mysqli_select_db($link,"mercurioDB");
-        $link->set_charset("utf8");
-
-        mysqli_query($link,"delete from solicitudes where producto_solicitado=$delete_id || producto_solicitante=$delete_id");
-        mysqli_query($link,"delete from imagenes where id_producto=$delete_id");
-        mysqli_query($link,"delete from productos where id_producto=$delete_id");
-        header("Location:body-productos.php");
-    }elseif(isset($_GET['id'])){
-
+?>
+<script LANGUAGE="JavaScript">
+    function confirmSubmit(){
+        var eli=confirm("¿Está seguro de eliminar este usuario?");
+        if (eli) return true ; 
+        else return false ;
+    }
+</script>
+<?php
         $id_p=$_GET["id"];
         $link=mysqli_connect("localhost","root","");
         mysqli_select_db($link,"mercurioDB");
@@ -56,12 +51,12 @@
         echo"   
                         </div>
                         <button class='carousel-control-prev' type='button' data-bs-target='#carouselExampleControls' data-bs-slide='prev'>
-                        <span class='carousel-control-prev-icon' aria-hidden='true'></span>
-                        <span class='visually-hidden'>Previous</span>
+                            <span class='carousel-control-prev-icon' aria-hidden='true'></span>
+                            <span class='visually-hidden'>Previous</span>
                         </button>
                         <button class='carousel-control-next' type='button' data-bs-target='#carouselExampleControls' data-bs-slide='next'>
-                        <span class='carousel-control-next-icon' aria-hidden='true'></span>
-                        <span class='visually-hidden'>Next</span>
+                            <span class='carousel-control-next-icon' aria-hidden='true'></span>
+                            <span class='visually-hidden'>Next</span>
                         </button>
                     </div>
                 </div>";
@@ -85,16 +80,9 @@
 
         echo "<div class=' d-flex  flex-row ver-productos-contenedor-boton justify-content-between '>
                     <button class=' card-borde ver-productos-boton' name='button-Modifica' onclick=location.href='modifica-producto.php?id=$id_p' >Modificar producto</button>
-                    <button class=' card-borde ver-productos-boton2 ' name='button-Elimina' onclick=location.href='?delete_id=$id_p' >Eliminar producto</button>
-                </div>";
-
-        echo"</div></main>";
-
-        
-    }else{//No se le pasa el id.
-        header("Location:body-productos.php");
-    }
-             
+                    <a class=' card-borde ver-productos-boton2 ' name='button-Elimina' onclick='return confirmSubmit()' href='elimina-producto.php?delete_id=$id_p'>Eliminar producto</a>
+                    </div>";
+        echo"</div></main>";    
     require_once '../footer.php';
 ?>
 
