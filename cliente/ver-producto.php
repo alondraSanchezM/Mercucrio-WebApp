@@ -38,15 +38,26 @@
 
         
         //Imagenes
-        echo"<div class='cards-ver-producto-carrusell card-borde  d-flex justify-content-center align-items-center'>";
-        echo "  <div id='carouselExampleControls' class='carousel slide' data-bs-ride='carousel'>
-                    <div class='carousel-inner'>";
+        echo"<div class='cards-ver-producto-carrusell card-borde  d-flex justify-content-center align-items-center'> ";
+        echo "  <div id='carouselExampleControls' class='carousel slide ver-productos-contenedor-carousel' data-bs-ride='carousel'>
+                    <div class='carousel-inner ver-productos-contenedor-carousel'>";
         $resulti=mysqli_query($link,"select * from imagenes where id_producto=$id_p");
+        $countCarousel=0;
         while ($row=mysqli_fetch_array($resulti)) {
             $ima=$row['nombre'].'.jpg';
-            echo"   <div class='carousel-item active'>
-                        <img src='../images/productos/$ima' class='d-block w-100 cards-ver-producto-carrusell' >
+            if($countCarousel==0){
+                echo"   <div class='carousel-item active '>
+                                <img src='../images/productos/$ima' class='ver-productos-img-carousel' >
+                        </div>";   
+                $countCarousel=1;
+            }
+            else{
+                echo"   <div class='carousel-item '>
+                        <img src='../images/productos/$ima' class='ver-productos-img-carousel' >
                     </div>";
+            }
+            
+
         }
         echo"   
                         </div>
