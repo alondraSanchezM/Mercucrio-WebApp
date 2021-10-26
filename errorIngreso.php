@@ -4,7 +4,7 @@ if (isset($_SESSION['tipoUsuario'])){
     if($_SESSION['tipoUsuario']==0) header("Location:administrador/body-principal.php");
 }
 
-$subCarp="./";                
+$subCarp="./";         
 require_once 'head.php';
 ?>
 
@@ -25,7 +25,12 @@ require_once 'head.php';
                             <label class="label-login">Contraseña </label>
                             <input class="input-login" type="password" name="passwd" required>
                             <input class="boton-login card-borde"  type="submit"  name="enviar" value="Iniciar sesión" />
-                            <p class="label-login-registro error">ERROR! USUARIO NO EXISTE</p>
+                            <?php 
+                                if(isset($_GET['mensaje'])) {
+                                    $mensaje = $_GET['mensaje'];
+                                    echo "<p class='label-login-registro error'>¡ERROR! $mensaje</p>";
+                                }
+                            ?>
                             <p class="label-login-registro">¿Aún no te registras? <a href="register.php"><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
                         </form>
                     </div>

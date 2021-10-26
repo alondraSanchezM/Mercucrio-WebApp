@@ -7,10 +7,9 @@
     $link=mysqli_connect("localhost","root","");
     mysqli_select_db($link,"mercurioDB");
     $result=mysqli_query($link,"select * from users where correo='$usu'");
-    if($row=mysqli_fetch_array($result)){//Si se encontró el usuario
+    if($row=mysqli_fetch_array($result)){
         if(intval($row["status"])==0){
             if($row["pass"]==$pas){
-                //echo "Usuario registrado";
                 $ti=$row['tipo'];
                 $_SESSION['nombre']=$row['nombre'];
                 $_SESSION['username']=$usu; //Variables de sesion
@@ -19,11 +18,11 @@
                 if($ti==1)header("Location:cliente/body-principal.php");
                 if($ti==0)header("Location:administrador/body-principal.php");
             }else
-                header("Location:errorPassword.php");
-        }
-        header("Location:errorLogin.php");
+                header("Location:errorIngreso.php?mensaje=CONTRASEÑA INCORRECTA");
+        }else 
+            header("Location:errorIngreso.php?mensaje=USUARIO BLOQUEADO");
     }else
-        header("Location:errorLogin.php");
+        header("Location:errorIngreso.php?mensaje=USUARIO NO EXISTE");
     mysqli_free_result($result);
     mysqli_close($link);
 ?>

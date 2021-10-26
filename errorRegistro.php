@@ -18,14 +18,19 @@ require_once 'head.php';
                 </div>
                 <div class="col-4 ">
                     <div class="card-borde formulario-login-card">
-                        <form class="formulario-login row" action="validateUser.php" method="POST">
+                        <form class="formulario-login row" action="insertUser.php" method="POST">
                             <label class="nombre-form">Iniciar sesión </label>
                             <label class="label-login">Correo electrónico </label>
                             <input class="input-login" type="text" name="usu" required>
                             <label class="label-login">Contraseña </label>
                             <input class="input-login" type="password" name="passwd" required>
                             <input class="boton-login card-borde"  type="submit"  name="enviar" value="Iniciar sesión" />
-                            <p class="label-login-registro">ERROR! PASSWORD INCORRECTO </p>
+                            <?php 
+                                if(isset($_GET['mensaje'])) {
+                                    $mensaje = $_GET['mensaje'];
+                                    echo "<p class='label-login-registro error'>¡ERROR! $mensaje</p>";
+                                }
+                            ?>
                             <p class="label-login-registro">¿Aún no te registras? <a href="register.php"><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
                         </form>
                     </div>

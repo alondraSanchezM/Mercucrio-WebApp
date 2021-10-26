@@ -11,7 +11,10 @@
     mysqli_select_db($link,"mercurioDB");
     $result=mysqli_query($link,"select correo, tipo from users where correo='$usu'");
     if($row=mysqli_fetch_array($result)){//Si se encontró el usuario
-        header("Location:errorRegister.php");
+        if(intval($row["status"])==1)
+            header("Location:errorRegistro.php?mensaje=USUARIO BLOQUEADO");
+        else
+            header("Location:errorRegistro.php?mensaje=USUARIO YA REGISTRADO");
     }else{
         $result=mysqli_query($link,"insert into Users(tipo,nombre,correo,pass,telefono,fecha_de_registro)
                                     values (1,'$nombre','$usu','$pass','$telefono','$fecha')");
