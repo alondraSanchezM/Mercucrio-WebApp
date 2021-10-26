@@ -14,13 +14,8 @@
         $link=mysqli_connect("localhost","root","");
         mysqli_select_db($link,"mercurioDB");
         $link->set_charset("utf8");
-
-        //Colocar usuario en inactivo
-        mysqli_query($link,"UPDATE users SET status = '1' WHERE id_user = '$delete_id'"); 
-        //Eliminar productos disponibles del usuario 
-        mysqli_query($link,"DELETE FROM productos WHERE id_user = '$delete_id' AND status = 0"); 
-        //Eliminar las imagenes del producto 
-        $ima=mysqli_query($link,"DELETE FROM imagenes WHERE id_user = '$delete_id'"); 
+        
+        mysqli_query($link,"CALL eliminarUsuario('$delete_id')"); 
     }
 ?>
 
