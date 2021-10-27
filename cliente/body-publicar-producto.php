@@ -14,11 +14,11 @@
 
         <?php    
             $categorias=array("Vehículos","Tecnología","Electrodomésticos","Hogar y muebles","Moda y complementos" ,"Deportes y fitness","Herramientas y construcción" ,"Industria y oficina","Juegos y juguetes" ,"Bebés","Salud y belleza" ,"Arte y antigüedades" ,"Libros y comics","Coleccionables","Otros");
+            $id=intval($_SESSION['id']);
 
             echo "
-            
             <div class='d-flex  flex-column  align-items-center justify-content-around '>
-                <form action='actualiza.php' class='modificar-productos-contenedor' method='POST'>
+                <form enctype='multipart/form-data' action='actualiza.php' class='modificar-productos-contenedor' method='POST'>
                     
                     <div class='cards-modificar-producto-big card-borde d-flex flex-column'>
                         <h3 class='modificar-producto-titulo'>Información general</h3>
@@ -47,6 +47,8 @@
                 
                 echo "              
                         <div class='cards-modificar-producto-big card-borde d-flex flex-column'>
+                            <h3 class='modificar-producto-titulo'>Imágenes</h3>
+                            <input name='image[]' multiple='' type='file' accept='image/*' required/>
                         </div>
                         <div class='cards-modificar-producto-small card-borde d-flex flex-column'>
                             <h3 class='modificar-producto-titulo'>ubicación del intercambio</h3>
@@ -59,7 +61,7 @@
                             <label class='modificar-producto-titulo-label' >Referencias:<span>*</span></label>  
                                 <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='referencia'></TEXTAREA>
                         </div>";
-                echo "<input type='hidden' name='id' >";
+                echo "<input type='hidden' name='id_user' value='$id'>";
                 echo "<INPUT TYPE='SUBMIT' class='modificar-productos-boton card-borde' value='Publicar producto'>";
             echo "</form>";
         ?>

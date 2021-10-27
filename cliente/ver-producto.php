@@ -7,7 +7,7 @@
 ?>
 <script LANGUAGE="JavaScript">
     function confirmSubmit(){
-        var eli=confirm("¿Está seguro de eliminar este usuario?");
+        var eli=confirm("¿Está seguro de eliminar este producto?");
         if (eli) return true ; 
         else return false ;
     }

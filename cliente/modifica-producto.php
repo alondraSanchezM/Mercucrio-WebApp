@@ -36,7 +36,7 @@
 
                 echo "
                 <div class='d-flex  flex-column  align-items-center justify-content-around '>
-                    <form action='actualiza.php' class='modificar-productos-contenedor' method='POST'>
+                    <form enctype='multipart/form-data' action='actualiza.php' class='modificar-productos-contenedor' method='POST'>
                         
                         <div class='cards-modificar-producto-big card-borde d-flex flex-column'>
                             <h3 class='modificar-producto-titulo'>Información general</h3>
@@ -68,6 +68,8 @@
                     
                     echo "              
                             <div class='cards-modificar-producto-big card-borde d-flex flex-column'>
+                                <h3 class='modificar-producto-titulo'>Imágenes</h3>
+                                <input name='image' type='file' accept='image/*'/>
                             </div>
                             <div class='cards-modificar-producto-small card-borde d-flex flex-column'>
                                 <h3 class='modificar-producto-titulo'>ubicación del intercambio</h3>
