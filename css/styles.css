@@ -493,6 +493,31 @@ body {
 
 /* Cards de intercambios */
 
+.modal-intercambios-titulo{
+    font-size: 4.4rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: lighter;
+}
+
+.modal-intercambios-info-text{
+    font-size: 2.4rem;
+    margin-left: 3rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: lighter;
+}
+
+.modal-intercambios-info-titulo {
+    margin: 2rem 0 2rem 2rem;
+    font-size: 2.5rem;
+    font-family: var(--fuente-principal);
+    color: var(--color-fuente);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
 .card-intercambios-imagen {
     width: 20rem;
     height: 18rem;
