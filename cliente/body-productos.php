@@ -25,13 +25,15 @@
                 echo "<a href='ver-producto.php?id={$row['id_producto']}'><div class='clientes-registrados card-borde'>";
                 //?variable1=valor1
                     $id_p=$row['id_producto'];
-                    $ima=$id.$id_p.'.jpg';
                     $nom=$row['nombre'];
                     $cat=$row['categoria'];
                     $est=$row['estado'];
                     $mun=$row['municipio'];
                     $fecha=$row['fecha'];
                     $desp=$row['descripcion'];
+                    $imagen=mysqli_query($link,"select nombre from imagenes where id_producto=$id_p limit 1");
+                    $imagen=mysqli_fetch_array($imagen);
+                    $ima=$imagen['nombre'];
                     echo "<div class='d-flex  flex-row justify-content-between'> <img  class='card-mis-productos-imagen' src='../images/productos/$ima' >";
                     echo "<div class='d-flex  flex-column card-mis-productos-texto align-self-start'> <p class='card-mis-productos-titulo'>$nom</p>  <p class='card-mis-productos-descripcion'>$desp</p> </div> ";
                     echo "<div class='d-flex  flex-column card-mis-productos-datos-finales col ' > <p class='card-mis-productos-categoria'>$cat</p> ";

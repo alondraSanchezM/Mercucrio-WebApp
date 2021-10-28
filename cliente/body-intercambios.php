@@ -36,10 +36,12 @@
                 
                 if($us_solicitado==$id || $us_solicitante==$id){
                         echo "<div class=' d-flex   justify-content-evenly align-content-center card-intercambios card-borde'>";
-                        //Datos producto solitado
+                        //Datos producto solicitado
                         $id_solicitado=$producto_solicitado['id_producto'];
                         $nom_solicitado=$producto_solicitado['nombre'];
-                        $ima_solicitado=$us_solicitado.$id_solicitado.'.jpg';
+                        $imagen=mysqli_query($link,"select nombre from imagenes where id_producto=$id_solicitado limit 1");
+                        $imagen=mysqli_fetch_array($imagen);
+                        $ima_solicitado=$imagen['nombre'];
                         $desp_solicitado=$producto_solicitado['descripcion'];
                         echo "<div class='d-flex  flex-row align-self-start'> <img  class='card-intercambios-imagen' src='../images/productos/$ima_solicitado' >";
                         echo "<div class='d-flex  flex-column card-intercambios-texto justify-self-start'> <p class='card-intercambios-titulo'>$nom_solicitado</p>  <p class='card-intercambios-descripcion'>$desp_solicitado</p> </div></div> ";
@@ -48,11 +50,23 @@
                         //Datos producto solicitante
                         $id_solicitante=$producto_solicitante['id_producto'];
                         $nom_solicitante=$producto_solicitante['nombre'];
-                        $ima_solicitante=$us_solicitante.$id_solicitante.'.jpg';
+                        $imagen=mysqli_query($link,"select nombre from imagenes where id_producto=$id_solicitante limit 1");
+                        $imagen=mysqli_fetch_array($imagen);
+                        $ima_solicitante=$imagen['nombre'];
                         $desp_solicitante=$producto_solicitante['descripcion'];
                         echo "<div class='d-flex  flex-row justify-self-end'> ";
                         echo "<div class='d-flex  flex-column card-intercambios-texto justify-self-start'> <p class='card-intercambios-titulo alineamiento-izq'>$nom_solicitante</p>  <p class='alineamiento-izq card-intercambios-descripcion'>$desp_solicitante</p> </div> ";
                         echo " <img  class='card-intercambios-imagen' src='../images/productos/$ima_solicitante' /> </div> </div>";
+                        //Datos del intercambio o sea del producto solicitado y por ende el dueño del producto solicitado
+                        $calle_y_num=$producto_solicitado['calle_y_numero'];
+                        $municipio=$producto_solicitado['municipio'];
+                        $estado=$producto_solicitado['estado'];
+                        $referencia=$producto_solicitado['referencias'];
+                        $user=mysqli_query($link,"select * from users where id_user=$us_solicitado");
+                        $user=mysqli_fetch_array($user);
+                        $nombre=$user['nombre'];
+                        $numero=$user['telefono'];
+                        $correo=$user['correo'];
                     }
             }
             echo "</div>";

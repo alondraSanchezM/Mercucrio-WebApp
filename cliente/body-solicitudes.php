@@ -32,7 +32,10 @@
                 while($row2=mysqli_fetch_array($result2)){
                     echo "<div class='card-solicitudes d-flex flex-column justify-content-between card-borde'>";
                         //Solicitante
-                        $imB=$id.$id_pr.'.jpg';
+                        //$imB=$id.$id_pr.'.jpg';
+                        $imagen=mysqli_query($link,"select nombre from imagenes where id_producto=$id_pr limit 1");
+                        $imagen=mysqli_fetch_array($imagen);
+                        $imB=$imagen['nombre'];
                         $men=$row2['mensaje'];
                         //Solicitado
                         $id_A=$row2['producto_solicitado'];
@@ -40,12 +43,16 @@
                         $rowA=mysqli_fetch_array($prod_solicitado);
                         $nom_A=$rowA['nombre'];
                         $id_u_A=$rowA['id_user'];
-                        $imA=$id_u_A.$id_A.'.jpg';
+                        
+                        $imagen=mysqli_query($link,"select nombre from imagenes where id_producto=$id_A limit 1");
+                        $imagen=mysqli_fetch_array($imagen);
+                        $imA=$imagen['nombre'];
+                        //$imA=$id_u_A.$id_A.'.jpg';
                         $estA=$rowA['estado'];
                         $munA=$rowA['municipio'];
 
                     echo "<div class='d-flex  flex-row justify-content-between'>";
-                    
+
                     echo " <img  class='card-intercambios-imagen' src='../images/productos/$imB' >";
                     echo "<div class='d-flex  flex-column align-content-between justify-content-evenly'>";
                     echo "<p class='card-solicitudes-nombre'> $nom_pr </p>";
@@ -86,7 +93,10 @@
                 while($row2=mysqli_fetch_array($result2)){
                     echo "<div class='card-solicitudes d-flex flex-column justify-content-between card-borde'>";
                         //Solicitado
-                        $imA=$id.$id_pr.'.jpg';
+                        $imagen=mysqli_query($link,"select nombre from imagenes where id_producto=$id_pr limit 1");
+                        $imagen=mysqli_fetch_array($imagen);
+                        $imA=$imagen['nombre'];
+                        //$imA=$id.$id_pr.'.jpg';
                         $estA=$row['estado'];
                         $munA=$row['municipio'];
                         //Solicitante
@@ -95,7 +105,10 @@
                         $rowB=mysqli_fetch_array($prod_solicitante);
                         $nom_B=$rowB['nombre'];
                         $id_u_B=$rowB['id_user'];
-                        $imB=$id_u_B.$id_B.'.jpg';
+                        $imagen=mysqli_query($link,"select nombre from imagenes where id_producto=$id_B limit 1");
+                        $imagen=mysqli_fetch_array($imagen);
+                        $imB=$imagen['nombre'];
+                        //$imB=$id_u_B.$id_B.'.jpg';
                         $men=$row2['mensaje'];
                         
                     echo "<div class='d-flex  flex-row justify-content-between'>";

@@ -8,7 +8,7 @@
     <main class="principal">
         <div class="d-flex align-items-center justify-content-around">
             <hr class="linea-izq">
-            <p class="titulos-espacios">Últimos productos</p>
+            <p class="titulos-espacios"><?php if(isset($_GET['categoria']))echo $_GET['categoria'];else echo "Últimos Productos"?></p>
             <hr class="linea-der">
         </div>
 

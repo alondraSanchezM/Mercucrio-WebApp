@@ -2,7 +2,12 @@
     $link=mysqli_connect("localhost","root","");
     mysqli_select_db($link,"mercurioDB");
     $link->set_charset("utf8");
-    $result=mysqli_query($link,"select * from Productos where status='0'");
+    if(isset($_GET['categoria'])){
+        $categoria=$_GET['categoria'];
+        $result=mysqli_query($link,"select * from Productos where status='0' and categoria='$categoria'");
+    }else{
+        $result=mysqli_query($link,"select * from Productos where status='0'");
+    }
     echo "<div class='grid-productos'>";
         while($row=mysqli_fetch_array($result)){ 
             $id_p=$row['id_producto'];
@@ -12,7 +17,10 @@
             $est=$row['estado'];
             $mun=$row['municipio'];
             $fech=$row['fecha'];
-            $ima=$id_u.$id_p.'.jpg';
+            
+            $imagen=mysqli_query($link,"select nombre from imagenes where id_producto=$id_p limit 1");
+            $imagen=mysqli_fetch_array($imagen);
+            $ima=$imagen['nombre'];
             echo "<div class='align-items-center justify-content-center ultimos-productos-container-grid'>";
             echo "<div class='ultimos-productos card-borde'>";
             echo "<img  class='card-imagen' src='".$subCarp."images/productos/$ima'>";

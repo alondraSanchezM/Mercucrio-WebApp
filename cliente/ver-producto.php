@@ -1,10 +1,3 @@
-<?php session_start();       
-    if(!$_SESSION['username'] || $_SESSION['tipoUsuario']!=1) header("Location:../index.php");
-    $subCarp="../";
-    require_once '../head.php';
-    echo "<body>";
-    require_once 'header-cliente.php';
-?>
 <script LANGUAGE="JavaScript">
     function confirmSubmit(){
         var eli=confirm("¿Está seguro de eliminar este producto?");
@@ -12,7 +5,25 @@
         else return false ;
     }
 </script>
-<?php
+<?php session_start();   
+    ob_start();    
+    
+    if(!$_SESSION['username'] || $_SESSION['tipoUsuario']!=1) header("Location:../index.php");
+    $subCarp="../";
+    require_once '../head.php';
+    echo "<body>";
+    require_once 'header-cliente.php';
+
+    if(isset($_GET['delete_id'])){//eliminar el producto
+        $delete_id = (int) $_GET['delete_id'];
+        $link=mysqli_connect("localhost","root","");
+        mysqli_select_db($link,"mercurioDB");
+        $link->set_charset("utf8");
+        mysqli_query($link,"delete from solicitudes where producto_solicitado=$delete_id || producto_solicitante=$delete_id");
+        mysqli_query($link,"delete from imagenes where id_producto=$delete_id");
+        mysqli_query($link,"delete from productos where id_producto=$delete_id");
+        header("Location:body-productos.php");
+    }else if(isset($_GET['id'])){
         $id_p=$_GET["id"];
         $link=mysqli_connect("localhost","root","");
         mysqli_select_db($link,"mercurioDB");
@@ -36,7 +47,6 @@
             </div>
             <div class='d-flex  flex-column  align-items-center justify-content-around clientes-registrados-container'>";
 
-        
         //Imagenes
         echo"<div class='cards-ver-producto-carrusell card-borde  d-flex justify-content-center align-items-center'> ";
         echo "  <div id='carouselExampleControls' class='carousel slide ver-productos-contenedor-carousel' data-bs-ride='carousel'>
@@ -44,10 +54,10 @@
         $resulti=mysqli_query($link,"select * from imagenes where id_producto=$id_p");
         $countCarousel=0;
         while ($row=mysqli_fetch_array($resulti)) {
-            $ima=$row['nombre'].'.jpg';
+            $ima=$row['nombre'];
             if($countCarousel==0){
                 echo"   <div class='carousel-item active '>
-                                <img src='../images/productos/$ima' class='ver-productos-img-carousel' >
+                                <img class='ver-productos-img-carousel' src='../images/productos/$ima' >
                         </div>";   
                 $countCarousel=1;
             }
@@ -56,8 +66,6 @@
                         <img src='../images/productos/$ima' class='ver-productos-img-carousel' >
                     </div>";
             }
-            
-
         }
         echo"   
                         </div>
@@ -91,11 +99,10 @@
 
         echo "<div class=' d-flex  flex-row ver-productos-contenedor-boton justify-content-between '>
                     <button class=' card-borde ver-productos-boton' name='button-Modifica' onclick=location.href='modifica-producto.php?id=$id_p' >Modificar producto</button>
-                    <a class=' card-borde ver-productos-boton2 ' name='button-Elimina' onclick='return confirmSubmit()' href='elimina-producto.php?delete_id=$id_p'>Eliminar producto</a>
+                    <a class=' card-borde ver-productos-boton2 ' name='button-Elimina' onclick='return confirmSubmit()' href='?delete_id=$id_p'>Eliminar producto</a>
                     </div>";
         echo"</div></main>";    
+    }
     require_once '../footer.php';
+    ob_end_flush();
 ?>
-
-</body>
-</html>
