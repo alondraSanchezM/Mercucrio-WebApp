@@ -53,9 +53,62 @@
 
             </div>
             <div>
-                <img class="icon-search" src="../images/Icon-search.svg" alt="Busqueda en el sistema">
+                <div class="container-fluid">
+                    <button class="navbar-toggler icon-search" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                        <img  src="../images/Icon-search.svg" alt="Busqueda en el sistema">
+                    </button>
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <form class="d-flex flex-column">
+                            <div class=' col-10 col-sm-5 offset-1 flex-row'>
+                                <input id='buscador-head' class="buscador-head me-2" type="text"  onkeyup="autocompletado()" placeholder="Ingresa el nombre del producto" >
+                                <hr class='linea-buscador'>
+                                <div>
+                                        <ul id="resultado-buscador"></ul>
+                                </div>
+                                <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
+                            </div>
+                        </form>
+                    </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+<script >
+    <?php
+    $link=mysqli_connect("localhost","root","");
+    mysqli_select_db($link,"mercurioDB");
+    $link->set_charset("utf8");
+        
+    $result=mysqli_query($link,"select id_producto, nombre from Productos where status='0'");
+    while($row=mysqli_fetch_array($result)){ 
+        $array['id_producto'][] = $row['id_producto'];
+        $array['nombre'][] = $row['nombre'];
+    }
+    ?>
+
+    let data = <?php echo json_encode($array);?>;
+    console.log(data);
+
+    function autocompletado () {
+        document.getElementById("resultado-buscador").innerHTML = '';
+        
+        
+        let pal = document.getElementById("buscador-head").value;
+        let respuestas='';
+        for(let i=0;i< data.nombre.length ; i++){
+            let posicion = data.nombre[i].toLowerCase().indexOf(pal.toLowerCase());
+            if (posicion !== -1)
+                respuestas += "<li class='decoracions-buscador-li'><a class='buscador-head' href='./producto-individual.php?id="+data.id_producto[i]+"'>"+data.nombre[i]+"</a></li>";
+        }
+        document.getElementById("resultado-buscador").innerHTML = respuestas ;
+    }
+
+</script>
 
 </header>

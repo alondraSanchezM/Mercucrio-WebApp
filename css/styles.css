@@ -13,6 +13,7 @@
     --color-border-menu: #BDC7CA;
     --color-texto-menu: #536876;
     --fuente-secundaria: 'Didact Gothic', sans-serif;
+    --fuente-search: #354E57;
     --fondo-perfil: #E6A8CF;
 }
 
@@ -194,6 +195,37 @@ body {
     font-size: 2.4rem;
 }
 
+.offcanvas-end{
+    width: 100%;
+}
+ input:focus {
+     
+    outline: none /* Removes the border when the input is clicked */
+
+
+}
+.decoracions-buscador-li{
+    
+    list-style:none;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.buscador-head{
+    color: var(--fuente-search);
+    font-family: var(--fuente-principal);
+    font-style: normal;
+    font-weight: lighter;
+    font-size: 3rem;
+    width: 100%;
+    border: 0;
+}
+
+.linea-buscador {
+    background-color: var(--color-fuente);
+    min-height: 0.2rem;
+    margin-right: 0%;
+    width: 100%;
+}
 /* Body principal */
 
 .principal {
