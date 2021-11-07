@@ -51,7 +51,46 @@
                     echo "<p type'password' class='datos-cuenta-info-texto'> $tel </p>";
                     echo "</div></div></div>";
                     
-                    echo "<button class=' card-borde ver-productos-boton' >Modificar información</button>";
+                    echo "<button type='button'  class=' card-borde ver-productos-boton'  data-bs-toggle='modal' data-bs-target='#modal-editar-perfil'>Modificar información</button>";
+                    
+                    echo "
+                    <div class='modal fade' id='modal-editar-perfil' tabindex='-1' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+                        <div class='modal-dialog modal-lg'>
+                            <div class='modal-content'>
+                            
+                                <div class='modal-header'>
+                                <h5 class='modal-datos-cliente-titulo' id='exampleModalLabel'>Edita tus datos</h5>
+                                <button type='button' class='btn-close modal-datos-cliente-titulo' data-bs-dismiss='modal' aria-label='Close'></button>
+                                </div>
+                                <div class='modal-body'>
+                                    <div class='row'>
+                                        <div class='col-6'>
+                                            <p class='modal-datos-cliente-info-titulo'>datos de cuenta</p>
+                                            <p class='modal-datos-cliente-info-text'> Correo electrónico </p>
+                                            <input class='modal-datos-cliente-info-input me-2' type='text'  value='$correo' >
+                                            <hr class='linea-modal-mis-datos'>
+                                            <p class='modal-datos-cliente-info-text'> Contraseña </p>
+                                            <input class='modal-datos-cliente-info-input me-2' type='password' value='$pass'  >
+                                            <hr class='linea-modal-mis-datos'>
+                                        </div>
+                                        <div class='col-6'>
+                                            <p class='modal-datos-cliente-info-titulo'>Datos personales</p>
+                                            <p class='modal-datos-cliente-info-text'> Nombre </p>
+                                            <input class='modal-datos-cliente-info-input me-2' type='text' value='$nombre'  >
+                                            <hr class='linea-modal-mis-datos'>
+                                            <p class='modal-datos-cliente-info-text'> Teléfono </p>
+                                            <input class='modal-datos-cliente-info-input me-2' type='text'  value='$tel' >
+                                            <hr class='linea-modal-mis-datos'>
+                                        </div>
+                                    </div>
+                                    <div class='row justify-content-center'>
+                                        <button type='button'  class=' card-borde mis-datos-guardar-boton' >Guardar cambios</button>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        ";
                 }
             ?>
         </div>

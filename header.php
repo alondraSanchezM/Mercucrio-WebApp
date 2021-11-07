@@ -102,7 +102,7 @@
         for(let i=0;i< data.nombre.length ; i++){
             let posicion = data.nombre[i].toLowerCase().indexOf(pal.toLowerCase());
             if (posicion !== -1)
-                respuestas += "<li class='decoracions-buscador-li'><a class='buscador-head' href='./cliente/producto-individual.php?id="+data.id_producto[i]+"'>"+data.nombre[i]+"</a></li>";
+                respuestas += "<li class='decoracions-buscador-li'><a class='buscador-head' href='./producto-individual.php?id="+data.id_producto[i]+"'>"+data.nombre[i]+"</a></li>";
         }
         document.getElementById("resultado-buscador").innerHTML = respuestas ;
     }

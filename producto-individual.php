@@ -5,14 +5,11 @@
         else return false ;
     }
 </script>
-<?php session_start();   
-    ob_start();    
-    
-    if(!$_SESSION['username'] || $_SESSION['tipoUsuario']!=1) header("Location:../index.php");
-    $subCarp="../";
-    require_once '../head.php';
+<?php 
+    $subCarp="./";
+    require_once './head.php';
     echo "<body>";
-    require_once 'header-cliente.php';
+    require_once 'header.php';
 
     if(isset($_GET['delete_id'])){//eliminar el producto
         $delete_id = (int) $_GET['delete_id'];
@@ -58,13 +55,13 @@
             $ima=$row['nombre'];
             if($countCarousel==0){
                 echo"   <div class='carousel-item active '>
-                                <img class='ver-productos-img-carousel' src='../images/productos/$ima' >
+                                <img class='ver-productos-img-carousel' src='./images/productos/$ima' >
                         </div>";   
                 $countCarousel=1;
             }
             else{
                 echo"   <div class='carousel-item '>
-                        <img src='../images/productos/$ima' class='ver-productos-img-carousel' >
+                        <img src='./images/productos/$ima' class='ver-productos-img-carousel' >
                     </div>";
             }
         }
@@ -117,6 +114,6 @@
 
         echo"</div></main>";    
     }
-    require_once '../footer.php';
+    require_once './footer.php';
     ob_end_flush();
 ?>

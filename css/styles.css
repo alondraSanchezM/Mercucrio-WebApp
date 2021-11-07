@@ -523,6 +523,63 @@ body {
     margin: 3rem 0;
 }
 
+.modal-datos-cliente-titulo{
+    font-size: 2.8rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: lighter;
+}
+
+.modal-datos-cliente-info-text{
+    font-size: 1.8rem;
+    margin-left: 3rem;
+    font-family: var(--fuente-secundaria);
+    color: var(--color-fuente);
+    font-weight: normal;
+}
+.modal-datos-cliente-info-input{
+    font-size: 1.6rem;
+    margin-left: 3rem;
+    font-family: var(--fuente-secundaria);
+    font-weight: lighter;
+    font-family: var(--fuente-principal);
+    font-style: normal;
+    width: 80%;
+    border: 0;
+}
+.mis-datos-guardar-boton{    
+    text-decoration: none;
+    width: 47%;
+    margin-top: 2rem ;
+    padding: 2rem 0;
+    background-color: var(--color-secundario);
+    font-family: var(--fuente-secundaria);
+    color: var(--blanco);
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: lighter;
+    
+
+}
+
+.modal-datos-cliente-info-titulo {
+    margin: 2rem 0 2rem 2rem;
+    font-size: 1.6rem;
+    font-family: var(--fuente-principal);
+    color: var(--color-fuente);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.linea-modal-mis-datos {
+    background-color: var(--color-fuente);
+    min-height: 0.2rem;
+    margin-right: 0%;
+    margin-left: 2rem;
+    width: 80%;
+}
+
+
 /* Cards de intercambios */
 
 .modal-intercambios-titulo{
@@ -631,8 +688,11 @@ body {
 
 .ver-productos-img-carousel{
     width: 80%;
+    min-width: 50%;
+    max-width: 80%;
     margin: 2.5% 10% ;
-    max-height: 100%;
+    max-height: 90%;
+    min-height: 50%;
 }
 
 .ver-productos-boton ,.ver-productos-boton2 {
@@ -664,7 +724,7 @@ body {
     padding: 0 2rem 3rem 2rem;
     width: 90%;
     margin: 3.7rem 0 ;
-    min-height: 50rem;
+    min-height: 20rem;
 }
 
 .cards-productos-individual-small{
@@ -673,6 +733,11 @@ body {
     width: 100%;
     margin: 3.7rem 0 ;
     min-height: 40rem;
+}
+
+.cards-productos-individual-small-grid{
+    grid-column: 3 / 4;
+    width: 100%;
 }
 .cards-productos-individual-small-ubi-fecha{
     grid-column: 2 / 3;
@@ -827,6 +892,7 @@ body {
     color: var(--color-fuente);
     font-weight: lighter;
 }
+
 
 
 /* Footer */
