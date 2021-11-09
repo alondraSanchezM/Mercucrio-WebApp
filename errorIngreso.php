@@ -18,7 +18,13 @@ require_once 'head.php';
                 </div>
                 <div class="col-4 ">
                     <div class="card-borde formulario-login-card">
-                        <form class="formulario-login row" action="validateUser.php" method="POST">
+                        <?php $u=$_GET['u']; 
+                            if ($u==1) {
+                                echo "<form class='formulario-login row' action='validateUser.php?u=1' method='POST'>";
+                            }else{
+                                echo "<form class='formulario-login row' action='validateUser.php' method='POST'>";
+                            }
+                        ?>        
                             <label class="nombre-form">Iniciar sesión </label>
                             <label class="label-login">Correo electrónico </label>
                             <input class="input-login" type="text" name="usu" required>
@@ -31,7 +37,7 @@ require_once 'head.php';
                                     echo "<p class='label-login-registro error'>¡ERROR! $mensaje</p>";
                                 }
                             ?>
-                            <p class="label-login-registro">¿Aún no te registras? <a href="register.php"><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
+                            <p class="label-login-registro">¿Aún no te registras? <?php if($u==1) echo "<a href='register.php?u=1'>"; else echo "<a href='register.php'>";?><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
                         </form>
                     </div>
                 </div>

@@ -18,20 +18,36 @@ require_once 'head.php';
                 </div>
                 <div class="col-4 ">
                     <div class="card-borde formulario-login-card">
-                        <form class="formulario-login row" action="insertUser.php" method="POST">
-                            <label class="nombre-form">Iniciar sesión </label>
+                    <?php $u=$_GET['u']; 
+                            if ($u==1) {
+                                echo "<form class='formulario-login row' action='insertUser.php?u=1' method='POST'>";
+                            }else{
+                                echo "<form class='formulario-login row' action='insertUser.php' method='POST'>";
+                            }
+                        ?> 
+                            <label class="nombre-form">Regístrate</label>
+                            <div class="row">
+                                <div class="col login-registro-nt">
+                                    <label class="label-login-nt">Nombre </label>
+                                    <input  class="input-login-nt" type="text" name="nombre" required>
+                                </div>
+                                <div class="col login-registro-nt">
+                                    <label class="label-login-nt">Telefono </label>
+                                    <input  class="input-login-nt" type="tel" name="telefono" required>
+                                </div>
+                            </div>
                             <label class="label-login">Correo electrónico </label>
-                            <input class="input-login" type="text" name="usu" required>
+                            <input  class="input-login" type="text" name="usu" required>
                             <label class="label-login">Contraseña </label>
-                            <input class="input-login" type="password" name="passwd" required>
-                            <input class="boton-login card-borde"  type="submit"  name="enviar" value="Iniciar sesión" />
+                            <input  class="input-login" type="password" name="passwd" required>
+                            <input class="boton-login card-borde" type="submit"  name="enviar" value="Crear cuenta"/>
                             <?php 
                                 if(isset($_GET['mensaje'])) {
                                     $mensaje = $_GET['mensaje'];
                                     echo "<p class='label-login-registro error'>¡ERROR! $mensaje</p>";
                                 }
                             ?>
-                            <p class="label-login-registro">¿Aún no te registras? <a href="register.php"><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
+                            <p class="label-login-registro">¿Ya estas registrado? <?php if($u==1) echo "<a href='login.php?u=1'>"; else echo "<a href='login.php'>";?><span class="label-login-registro-span">Inicia sesión.</span></a></p>
                         </form>
                     </div>
                 </div>

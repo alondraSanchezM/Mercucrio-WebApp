@@ -19,7 +19,13 @@ if (isset($_SESSION['tipoUsuario'])){
                 </div>
                 <div class="col-4 ">
                     <div class="card-borde formulario-login-card">
-                        <form class="formulario-login row" action="insertUser.php" method="POST">
+                        <?php $u=$_GET['u']; 
+                            if ($u==1) {
+                                echo "<form class='formulario-login row' action='insertUser.php?u=1' method='POST'>";
+                            }else{
+                                echo "<form class='formulario-login row' action='insertUser.php' method='POST'>";
+                            }
+                        ?> 
                             <label class="nombre-form">Regístrate</label>
                             <div class="row">
                                 <div class="col login-registro-nt">
@@ -36,7 +42,7 @@ if (isset($_SESSION['tipoUsuario'])){
                             <label class="label-login">Contraseña </label>
                             <input  class="input-login" type="password" name="passwd" required>
                             <input class="boton-login card-borde" type="submit"  name="enviar" value="Crear cuenta"/>
-                            <p class="label-login-registro">¿Ya estas registrado? <a href="login.php"><span class="label-login-registro-span">Inicia sesión.</span></a></p>
+                            <p class="label-login-registro">¿Ya estas registrado?<?php if($u==1) echo "<a href='login.php?u=1'>"; else echo "<a href='login.php'>";?><span class="label-login-registro-span">Inicia sesión.</span></a></p>
                         </form>
                     </div>
                 </div>

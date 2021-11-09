@@ -31,7 +31,7 @@
         </div>
 
         <div class="boton-central-publicar align-items-center">
-            <a class="boton-central-publicar-texto " href="login.php">
+            <a class="boton-central-publicar-texto " href="login.php?u=1">
                 <p>Publicar Productos</p>
             </a>
         </div>
