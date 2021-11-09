@@ -28,8 +28,9 @@
                 $id_pr=$row['id_producto'];
                 $nom_pr=$row['nombre'];
                 //Enviadas 
-                $result2=mysqli_query($link,"select * from solicitudes where producto_solicitante=$id_pr");//Solicitudes hechas
+                $result2=mysqli_query($link,"select * from solicitudes where producto_solicitante=$id_pr and status=0");//Solicitudes hechas
                 while($row2=mysqli_fetch_array($result2)){
+                    $id_sol=$row2['id_solicitud'];
                     echo "<div class='card-solicitudes d-flex flex-column justify-content-between card-borde'>";
                         //Solicitante
                         //$imB=$id.$id_pr.'.jpg';
@@ -71,7 +72,7 @@
                     echo "<p  class='card-solicitudes-mensaje'> $men </p>";
                     
                     echo "</div> <div class='card-solicitudes-body'>";  
-                    echo "<div class=' d-flex  flex-row align-self-end justify-content-end'> <button class='card-solicitudes-boton card-borde' name='enviar' > Cancelar </button> </div>";
+                    echo "<div class=' d-flex  flex-row align-self-end justify-content-end'> <a class='card-solicitudes-boton card-borde' name='enviar' href='manejo-solicitud.php?cancela=$id_sol'> Cancelar </a> </div>";
                         
                     echo "</div></div>";
 
@@ -89,8 +90,9 @@
                 $nom_pr=$row['nombre'];
                 
                 //Recibidas 
-                $result2=mysqli_query($link,"select * from solicitudes where producto_solicitado=$id_pr");//Solicitudes recibidas
+                $result2=mysqli_query($link,"select * from solicitudes where producto_solicitado=$id_pr and status=0");//Solicitudes recibidas
                 while($row2=mysqli_fetch_array($result2)){
+                    $id_sol=$row2['id_solicitud'];
                     echo "<div class='card-solicitudes d-flex flex-column justify-content-between card-borde'>";
                         //Solicitado
                         $imagen=mysqli_query($link,"select nombre from imagenes where id_producto=$id_pr limit 1");
@@ -131,8 +133,8 @@
                     echo "<p  class='card-solicitudes-mensaje'> $men </p>";
                     
                     echo "</div> <div class='card-solicitudes-body'>";
-                    echo "<div class=' d-flex  flex-row justify-content-between'> <button class='card-solicitudes-boton2 card-borde' name='enviar' > Aceptar </button> ";
-                    echo "<button class='card-solicitudes-boton card-borde' name='enviar' > Declinar </button> </div>";
+                    echo "<div class=' d-flex  flex-row justify-content-between'> <a class='card-solicitudes-boton2 card-borde' name='enviar' href='manejo-solicitud.php?acepta=$id_sol'> Aceptar </a> ";
+                    echo "<a class='card-solicitudes-boton card-borde' name='enviar' href='manejo-solicitud.php?declina=$id_sol'> Declinar </a> </div>";
                     echo "</div></div>";
 
                 }

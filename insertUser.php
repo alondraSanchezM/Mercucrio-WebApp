@@ -4,6 +4,7 @@
     $usu=$_REQUEST['usu'];
     $pass=$_REQUEST['passwd'];
     if(isset($_GET['u'])) $u=$_GET['u']; else $u=0;
+    if(isset($_GET['id_p'])) $id_p=$_GET['id_p'];else $id_p=0;
     
     date_default_timezone_set("America/Mexico_City");
     $fecha = date('Y-m-d');
@@ -12,10 +13,17 @@
     mysqli_select_db($link,"mercurioDB");
     $result=mysqli_query($link,"select correo, tipo from users where correo='$usu'");
     if($row=mysqli_fetch_array($result)){//Si se encontró el usuario
-        if(intval($row["status"])==1)
-            header("Location:errorRegistro.php?u=$u&mensaje=USUARIO BLOQUEADO");
-        else
-            header("Location:errorRegistro.php?u=$u&mensaje=USUARIO YA REGISTRADO");
+        if(intval($row["status"])==1){
+            if($id_p==0)
+                header("Location:errorRegistro.php?u=$u&mensaje=USUARIO BLOQUEADO");
+            else
+                header("Location:errorRegistro.php?id_p=$id_p&mensaje=USUARIO BLOQUEADO");
+        }else{
+            if($id_p==0)
+                header("Location:errorRegistro.php?u=$u&mensaje=USUARIO YA REGISTRADO");
+            else
+                header("Location:errorRegistro.php?id_p=$id_p&mensaje=USUARIO YA REGISTRADO");
+        }
     }else{
         $result=mysqli_query($link,"insert into Users(tipo,nombre,correo,pass,telefono,fecha_de_registro)
                                     values (1,'$nombre','$usu','$pass','$telefono','$fecha')");
@@ -29,6 +37,8 @@
         $_SESSION['tipoUsuario']=1; //Variables de sesion
         if($u==1)
             header("Location:cliente/body-publicar-producto.php");
+        else if(isset($_GET['id_p']))
+            header("Location:cliente/producto-individual.php?id=$_GET[id_p]");
         else
             header("Location:cliente/body-principal.php");
     }

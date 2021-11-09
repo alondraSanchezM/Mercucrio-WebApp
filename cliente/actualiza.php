@@ -58,7 +58,11 @@
         mysqli_free_result($result);
     }
     mysqli_close($link);
-    header("Location:body-productos.php");
+    if(isset($_GET['u'])){
+        $id_p= $_GET['id_p'];
+        header("Location:producto-individual.php?id=$id_p");
+    }else
+        header("Location:body-productos.php");
 ?>
 </body>
 </html>

@@ -19,9 +19,11 @@ if (isset($_SESSION['tipoUsuario'])){
                 </div>
                 <div class="col-4 ">
                     <div class="card-borde formulario-login-card">
-                        <?php $u=$_GET['u']; 
+                        <?php if(isset($_GET['u'])) $u=$_GET['u']; else $u=0; 
                             if ($u==1) {
                                 echo "<form class='formulario-login row' action='insertUser.php?u=1' method='POST'>";
+                            }else if(isset($_GET['id_p'])) {
+                                echo "<form class='formulario-login row' action='insertUser.php?id_p=$_GET[id_p]' method='POST'>";
                             }else{
                                 echo "<form class='formulario-login row' action='insertUser.php' method='POST'>";
                             }
@@ -42,7 +44,7 @@ if (isset($_SESSION['tipoUsuario'])){
                             <label class="label-login">Contraseña </label>
                             <input  class="input-login" type="password" name="passwd" required>
                             <input class="boton-login card-borde" type="submit"  name="enviar" value="Crear cuenta"/>
-                            <p class="label-login-registro">¿Ya estas registrado?<?php if($u==1) echo "<a href='login.php?u=1'>"; else echo "<a href='login.php'>";?><span class="label-login-registro-span">Inicia sesión.</span></a></p>
+                            <p class="label-login-registro">¿Ya estas registrado?<?php if($u==1) echo "<a href='login.php?u=1'>";else if(isset($_GET['id_p'])) echo "<a href='login.php?id_p=$_GET[id_p]'>"; else echo "<a href='login.php'>";?><span class="label-login-registro-span">Inicia sesión.</span></a></p>
                         </form>
                     </div>
                 </div>

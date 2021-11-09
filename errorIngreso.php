@@ -18,9 +18,11 @@ require_once 'head.php';
                 </div>
                 <div class="col-4 ">
                     <div class="card-borde formulario-login-card">
-                        <?php $u=$_GET['u']; 
+                        <?php if(isset($_GET['u'])) $u=$_GET['u']; else $u=0; 
                             if ($u==1) {
                                 echo "<form class='formulario-login row' action='validateUser.php?u=1' method='POST'>";
+                            }else if(isset($_GET['id_p'])) {
+                                echo "<form class='formulario-login row' action='validateUser.php?id_p=$_GET[id_p]' method='POST'>";
                             }else{
                                 echo "<form class='formulario-login row' action='validateUser.php' method='POST'>";
                             }
@@ -37,7 +39,7 @@ require_once 'head.php';
                                     echo "<p class='label-login-registro error'>¡ERROR! $mensaje</p>";
                                 }
                             ?>
-                            <p class="label-login-registro">¿Aún no te registras? <?php if($u==1) echo "<a href='register.php?u=1'>"; else echo "<a href='register.php'>";?><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
+                            <p class="label-login-registro">¿Aún no te registras? <?php if($u==1) echo "<a href='register.php?u=1'>";else if(isset($_GET['id_p'])) echo "<a href='register.php?id_p=$_GET[id_p]'>"; else echo "<a href='register.php'>";?><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
                         </form>
                     </div>
                 </div>

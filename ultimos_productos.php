@@ -1,4 +1,5 @@
 <?php
+    if(isset($_SESSION['id'])) $user=$_SESSION['id'];else $user='0';
     $link=mysqli_connect("localhost","root","");
     mysqli_select_db($link,"mercurioDB");
     $link->set_charset("utf8");
@@ -22,6 +23,13 @@
             $imagen=mysqli_fetch_array($imagen);
             $ima=$imagen['nombre'];
             echo "<div class='align-items-center justify-content-center ultimos-productos-container-grid'>";
+            if($id_u==$user){
+                echo "<a href='ver-producto.php?id={$row['id_producto']}'>";
+            }elseif ($user!=0) {
+                echo "<a href='producto-individual.php?id={$row['id_producto']}'>";
+            }else{
+                echo "<a href='login.php?id_p={$row['id_producto']}'>";
+            }
             echo "<div class='ultimos-productos card-borde'>";
             echo "<img  class='card-imagen' src='".$subCarp."images/productos/$ima'>";
             

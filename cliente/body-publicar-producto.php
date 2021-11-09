@@ -17,10 +17,14 @@
             $id=intval($_SESSION['id']);
 
             echo "
-            <div class='d-flex  flex-column  align-items-center justify-content-around '>
-                <form enctype='multipart/form-data' action='actualiza.php' class='modificar-productos-contenedor' method='POST'>
-                    
-                    <div class='cards-modificar-producto-big card-borde d-flex flex-column'>
+            <div class='d-flex  flex-column  align-items-center justify-content-around '>";
+                if(isset($_GET['u'])){
+                    $id_p=$_GET['id_p'];
+                    echo "<form enctype='multipart/form-data' action='actualiza.php?u=0&id_p=$id_p' class='modificar-productos-contenedor' method='POST'>";
+                }else{
+                    echo "<form enctype='multipart/form-data' action='actualiza.php' class='modificar-productos-contenedor' method='POST'>";
+                }    
+                    echo "<div class='cards-modificar-producto-big card-borde d-flex flex-column'>
                         <h3 class='modificar-producto-titulo'>Información general</h3>
                             <label for='select' class='modificar-producto-titulo-label' >Categoría <span>*</span></label> ";
                 echo"<select class='form-select modificar-producto-select modificar-producto-titulo-label' name='categoria' required>";
