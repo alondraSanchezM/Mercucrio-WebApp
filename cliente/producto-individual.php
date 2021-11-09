@@ -10,14 +10,16 @@
     require_once 'header-cliente.php';
 
     if(isset($_GET['id'])){
-        $id=intval($_SESSION['id']);
         $id_p=$_GET["id"];
+        $id=intval($_SESSION['id']);
         $link=mysqli_connect("localhost","root","");
         mysqli_select_db($link,"mercurioDB");
         $link->set_charset("utf8");
         //Informacion
         $result=mysqli_query($link,"select * from productos where id_producto=$id_p");
         $row=mysqli_fetch_array($result);
+        $id_user=$row['id_user'];
+        if($id_user==$id)header("Location:ver-producto?id=$id_p");
         $nom=$row['nombre'];
         $desp=$row['descripcion'];
         $tit_cambio=$row['titulo_cambio'];

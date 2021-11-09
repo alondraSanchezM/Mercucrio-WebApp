@@ -23,9 +23,7 @@
             $imagen=mysqli_fetch_array($imagen);
             $ima=$imagen['nombre'];
             echo "<div class='align-items-center justify-content-center ultimos-productos-container-grid'>";
-            if($id_u==$user){
-                echo "<a href='ver-producto.php?id={$row['id_producto']}'>";
-            }elseif ($user!=0) {
+            if($user!=0) {
                 echo "<a href='producto-individual.php?id={$row['id_producto']}'>";
             }else{
                 echo "<a href='login.php?id_p={$row['id_producto']}'>";
