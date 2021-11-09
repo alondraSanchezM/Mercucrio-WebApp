@@ -1,4 +1,28 @@
 <?php
+
+$link=mysqli_connect("localhost","root","");
+mysqli_select_db($link,"mercurioDB");
+$link->set_charset("utf8");
+
+if(isset($_REQUEST['id_u'])){
+    $id_u=$_REQUEST['id_u'];
+    $correo=$_REQUEST['correo'];
+    $pass=$_REQUEST['pass'];
+    $nombre=$_REQUEST['nombre'];
+    $telefono=$_REQUEST['telefono'];
+
+    echo "<br>$correo";
+    echo "<br>$pass";
+    echo "<br>$nombre";
+    echo "<br>$telefono";
+    //ACTUALIZAR VARIABLES DE SESION
+    mysqli_query($link,"update users set nombre='$nombre',correo='$correo',pass='$pass',telefono='$telefono' where id_user=$id_u");
+        /*$_SESSION['id']=$row['id_user'];//En teoria no cambia
+        $_SESSION['nombre']=$nombre; 
+        $_SESSION['username']=$usu; //Variables de sesion
+        $_SESSION['tipoUsuario']=1; //En teoria no cambia*/
+        header("Location:body-datos.php");
+}else{
     $categorias=array("Vehículos","Tecnología","Electrodomésticos",'Hogar y muebles','Moda y complementos' ,"Deportes y Fitness","Herramientas y construcción" ,"Industria y oficina","Juegos y juguetes" ,"Bebés","Salud y Belleza" ,"Arte y antigüedades" ,"Libros y comics","Coleccionables","Otros");
     $cat=$_REQUEST['categoria'];
     foreach ($categorias as &$valor) {
@@ -14,9 +38,6 @@
     $mun=$_REQUEST['municipio'];
     $ca_num=$_REQUEST['calle'];
     $ref=$_REQUEST['referencia'];
-    $link=mysqli_connect("localhost","root","");
-    mysqli_select_db($link,"mercurioDB");
-    $link->set_charset("utf8");
     if(isset($_REQUEST['id'])){//modifica producto
         $id_p=$_REQUEST['id'];
         mysqli_query($link,"Update productos set categoria='$cate',nombre='$tit',descripcion='$des',titulo_cambio='$tit_cam',descripcion_cambio='$des_cam',estado='$est',municipio='$mun',calle_y_numero='$ca_num',referencias='$ref' where id_producto=$id_p");
@@ -63,6 +84,7 @@
         header("Location:producto-individual.php?id=$id_p");
     }else
         header("Location:body-productos.php");
+}
 ?>
 </body>
 </html>

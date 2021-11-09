@@ -62,31 +62,32 @@
                                 <h5 class='modal-datos-cliente-titulo' id='exampleModalLabel'>Edita tus datos</h5>
                                 <button type='button' class='btn-close modal-datos-cliente-titulo' data-bs-dismiss='modal' aria-label='Close'></button>
                                 </div>
-                                <div class='modal-body'>
+                                <div class='modal-body'><form action='actualiza' method='POST'> 
                                     <div class='row'>
                                         <div class='col-6'>
                                             <p class='modal-datos-cliente-info-titulo'>datos de cuenta</p>
                                             <p class='modal-datos-cliente-info-text'> Correo electrónico </p>
-                                            <input class='modal-datos-cliente-info-input me-2' type='text'  value='$correo' >
+                                            <input class='modal-datos-cliente-info-input me-2' type='text'  value='$correo' name='correo'>
                                             <hr class='linea-modal-mis-datos'>
                                             <p class='modal-datos-cliente-info-text'> Contraseña </p>
-                                            <input class='modal-datos-cliente-info-input me-2' type='password' value='$pass'  >
+                                            <input class='modal-datos-cliente-info-input me-2' type='password' value='$pass'  name='pass'>
                                             <hr class='linea-modal-mis-datos'>
                                         </div>
                                         <div class='col-6'>
                                             <p class='modal-datos-cliente-info-titulo'>Datos personales</p>
                                             <p class='modal-datos-cliente-info-text'> Nombre </p>
-                                            <input class='modal-datos-cliente-info-input me-2' type='text' value='$nombre'  >
+                                            <input class='modal-datos-cliente-info-input me-2' type='text' value='$nombre'  name='nombre'>
                                             <hr class='linea-modal-mis-datos'>
                                             <p class='modal-datos-cliente-info-text'> Teléfono </p>
-                                            <input class='modal-datos-cliente-info-input me-2' type='text'  value='$tel' >
+                                            <input class='modal-datos-cliente-info-input me-2' type='text'  value='$tel' name='telefono'>
                                             <hr class='linea-modal-mis-datos'>
                                         </div>
                                     </div>
                                     <div class='row justify-content-center'>
-                                        <button type='button'  class=' card-borde mis-datos-guardar-boton' >Guardar cambios</button>
+                                        <input type='hidden' name='id_u' value='$id'>
+                                        <INPUT TYPE='SUBMIT' class='card-borde mis-datos-guardar-boton' value='Guardar cambios'>
                                     </div>
-                                </div>
+                                </form></div>
                             </div>
                             </div>
                         </div>
