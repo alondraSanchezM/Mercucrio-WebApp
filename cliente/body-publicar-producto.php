@@ -52,7 +52,18 @@
                 echo "              
                         <div class='cards-modificar-producto-big card-borde d-flex flex-column'>
                             <h3 class='modificar-producto-titulo'>Imágenes</h3>
-                            <input name='image[]' multiple='' type='file' accept='image/*' required/>
+                            <script src='https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js'></script>
+                            <label for='cargar-img' class='label-img-producto-individual'>
+                                <lord-icon
+                                    src='https://cdn.lordicon.com/fgkmrslx.json'
+                                    trigger='loop'
+                                    colors='primary:#4a8aa1,secondary:#c60f7b'
+                                    class='label-img-producto-individual-icon'>
+                                </lord-icon>
+                                <p class='modificar-producto-titulo-label'>Añadir imagenes</p>
+                            </label>
+                            <input id='cargar-img' onchange='subirimg()' name='image[]' multiple='' type='file' accept='image/*' required/>
+                            <div id='img-cargadas'></div>
                         </div>
                         <div class='cards-modificar-producto-small card-borde d-flex flex-column'>
                             <h3 class='modificar-producto-titulo'>ubicación del intercambio</h3>
@@ -75,7 +86,19 @@
 <?php          
     require_once '../footer.php';
 ?>
-
+<script>
+    
+function subirimg(){
+    let cargar = ''
+    let imNames= document.getElementById('cargar-img').files
+    for (const file in imNames) 
+        if(imNames[file].name) 
+            if(imNames[file].name !='item')
+                cargar=cargar+'<p class="card-titulo">'+imNames[file].name+'</p>'
+    document.getElementById('img-cargadas').innerHTML = cargar
+    console.log(imNames);
+}
+</script>
 
 </body>
 

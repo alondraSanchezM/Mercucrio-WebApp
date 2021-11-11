@@ -48,8 +48,8 @@
                                     $ima=$row['nombre'];
                                     if($countCarousel==0){
                                         echo"<div class='carousel-item active '>
-                                            <img class='ver-productos-img-carousel' src='../images/productos/$ima' >
-                                        </div>";   
+                                                <img class='ver-productos-img-carousel' src='../images/productos/$ima' >
+                                            </div>";   
                                         $countCarousel=1;
                                     }
                                     else{
@@ -71,12 +71,12 @@
                         </div>
                     </div>";
                     //Solicitar
-                    echo "
-                    <div class='cards-productos-individual-small d-flex flex-column justify-content-center align-items-center'>
-                        <div class=' cards-modificar-producto-small card-borde d-flex flex-column'>
-                            <form action='hacer-solicitud.php?id=$id_p' method='POST'>
-                                <h3 class='modificar-producto-titulo'>Realiza tu intercambio</h3>";
-                                echo "<label for='select' class='modificar-producto-titulo-label' >Producto a intercambiar <span>*</span></label>";                                
+                    echo "                            
+                        <div class='cards-productos-individual-small d-flex flex-column justify-content-center align-items-center'>
+                            <div class=' cards-modificar-producto-small card-borde d-flex flex-column'>
+                                <form action='hacer-solicitud.php?id=$id_p' method='POST'>
+                                    <h3 class='modificar-producto-titulo'>Realiza tu intercambio</h3>";
+                                    echo "<label for='select' class='modificar-producto-titulo-label' >Producto a intercambiar <span>*</span></label>";                                
                                     $result=mysqli_query($link,"select * from productos where id_user=$id and status=0");
                                     $row_cnt = $result->num_rows;
                                     if($row_cnt>0){
@@ -90,17 +90,18 @@
                                     }else{
                                         echo"<label class='modificar-producto-titulo-label'>NO TIENES PRODUCTOS PARA INTERCAMBIAR</label>";
                                     }
-
-                                echo "<br><label class='modificar-producto-titulo-label' >Mensaje:<span>*</span></label> 
-                                <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='mensaje' required></TEXTAREA>
-                        </div>
-                                <label class='modificar-producto-titulo-label align-self-end me-5' > <span>*</span>  Campos requeridos   </label>";
-                                if($row_cnt!=0)
-                                    echo "<input type='SUBMIT' class=' card-borde productos-individual-boton' name='button-Modifica' value='Solicitar intercambio'>";
-                                else
-                                    echo "<a class=' card-borde productos-individual-boton' href='body-publicar-producto.php?id_p=$id_p&u=0'>Agregar producto</a>
-                            </form>
-                    </div> ";    
+                                    echo "<br><label class='modificar-producto-titulo-label' >Mensaje:<span>*</span></label> 
+                                    <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='mensaje' required></TEXTAREA>
+                                </form>
+                            </div>
+                            <label class='modificar-producto-titulo-label align-self-end me-5' > <span>*</span>  Campos requeridos   </label>";
+                            if($row_cnt!=0)
+                                echo "<input type='SUBMIT' class=' card-borde productos-individual-boton' name='button-Modifica' value='Solicitar intercambio'>";
+                            else
+                                echo "<a class=' card-borde productos-individual-boton' href='body-publicar-producto.php?id_p=$id_p&u=0'>Agregar producto</a>";    
+                            echo "
+                        </div> 
+                    ";    
                     //descripcion a cambio
                     echo "  
                     <div class='cards-productos-individual-big card-borde'>
