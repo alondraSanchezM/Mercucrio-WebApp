@@ -91,8 +91,9 @@
                                         echo"<label class='modificar-producto-titulo-label'>NO TIENES PRODUCTOS PARA INTERCAMBIAR</label>";
                                     }
                                     echo "<br><label class='modificar-producto-titulo-label' >Mensaje:<span>*</span></label> 
-                                    <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='mensaje' required></TEXTAREA>
-                                </form>
+                                    <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='mensaje' required></TEXTAREA>";
+//                                </form>
+echo"
                             </div>
                             <label class='modificar-producto-titulo-label align-self-end me-5' > <span>*</span>  Campos requeridos   </label>";
                             if($row_cnt!=0)
@@ -100,7 +101,7 @@
                             else
                                 echo "<a class=' card-borde productos-individual-boton' href='body-publicar-producto.php?id_p=$id_p&u=0'>Agregar producto</a>";    
                             echo "
-                        </div> 
+                        <form></div> 
                     ";    
                     //descripcion a cambio
                     echo "  

@@ -45,15 +45,17 @@ if(isset($_REQUEST['id_u'])){
         $result=mysqli_query($link,"select id_user from productos where id_producto=$id_p");
         $row=mysqli_fetch_array($result);
         $id_user=$row['id_user'];
-        $result=mysqli_query($link,"select count(*) total from imagenes where id_producto=$id_p");
-        $row=mysqli_fetch_assoc($result);
-        $num_img=$row['total']+1;
-        $imgExt = strtolower(pathinfo($_FILES['image']['name'],PATHINFO_EXTENSION));
-        $imgNombre=$id_user.$id_p.$num_img.'.'.$imgExt;
-        $fichero_subido = '../images/productos/'. basename($imgNombre);
-        if (move_uploaded_file($_FILES['image']['tmp_name'], $fichero_subido)) {
-            echo "Se subio";
-            mysqli_query($link,"insert into Imagenes(id_producto,id_user,nombre)values($id_p,$id_user,'$imgNombre')");
+        $cantidad=count($_FILES['image']['tmp_name']);
+        for ($i=0; $i <$cantidad; $i++) { 
+            $result=mysqli_query($link,"select count(*) total from imagenes where id_producto=$id_p");
+            $row=mysqli_fetch_assoc($result);
+            $num_img=$row['total']+1;
+            $imgExt = strtolower(pathinfo($_FILES['image']['name'][$i],PATHINFO_EXTENSION));
+            $imgNombre=$id_user.$id_p.$num_img.'.'.$imgExt;
+            $fichero_subido = '../images/productos/'. basename($imgNombre);
+            if (move_uploaded_file($_FILES['image']['tmp_name'][$i], $fichero_subido)) {
+                mysqli_query($link,"insert into Imagenes(id_producto,id_user,nombre)values($id_p,$id_user,'$imgNombre')");
+            }
         }
         mysqli_free_result($result);
     }else if(isset($_REQUEST['id_user'])){//agregar producto

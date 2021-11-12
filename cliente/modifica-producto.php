@@ -69,8 +69,14 @@
                     echo "              
                             <div class='cards-modificar-producto-big card-borde d-flex flex-column'>
                                 <h3 class='modificar-producto-titulo'>Imágenes</h3>
-                                <input name='image' type='file' accept='image/*'/>
-                            </div>
+                                <input name='image[]' multiple='' type='file' accept='image/*'/>";
+                                $imagenes=mysqli_query($link,"select * from imagenes where id_producto=$id_p");
+                                
+                                while ($row=mysqli_fetch_array($imagenes)) {
+                                    $ima=$row['nombre'];
+                                    echo "<div class='carousel-item active '> <img class='ver-productos-img-carousel' src='../images/productos/$ima'></div>";
+                                }
+                            echo" </div>
                             <div class='cards-modificar-producto-small card-borde d-flex flex-column'>
                                 <h3 class='modificar-producto-titulo'>ubicación del intercambio</h3>
                                 <label class='modificar-producto-titulo-label' >Estado:<span>*</span></label> 
@@ -85,13 +91,6 @@
                     echo "<input type='hidden' name='id' value='$id_p'>";
                     echo "<INPUT TYPE='SUBMIT' class='modificar-productos-boton card-borde' value='Actualizar'>";
                 echo "</form>";
-                //Imagenes
-                /*$result=mysqli_query($link,"select * from imagenes where id_producto=$id_p");
-                echo "<h3>IMÁGENES</h3>";
-                while ($row=mysqli_fetch_array($result)) {
-                    $ima=$row['nombre'].'.jpg';
-                    echo"<img  class='card-mis-productos-imagen' src='../images/productos/$ima'>";
-                }*/
             }else{//No se le pasa el id.
                 header("Location:body-productos.php");
             }

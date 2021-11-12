@@ -7,8 +7,7 @@
         $link->set_charset("utf8");
         $producto_solicitante=$_REQUEST['producto_cambio'];
         $mensaje= $_REQUEST['mensaje'];
-        $fecha=date("Y-m-d");
-        mysqli_query($link,"insert into solicitudes(producto_solicitado,producto_solicitante,mensaje,fecha)values($producto_solicitado,$producto_solicitante,'$mensaje','$fecha')");
+        mysqli_query($link,"insert into solicitudes(producto_solicitado,producto_solicitante,mensaje)values($producto_solicitado,$producto_solicitante,'$mensaje')");
     }
     header("Location:./body-solicitudes.php");
     ob_end_flush();
