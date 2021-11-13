@@ -80,10 +80,11 @@
                                 
                                 while ($row=mysqli_fetch_array($imagenes)) {
                                     $ima=$row['nombre'];
+                                    $id_ima=$row['id_imagen'];
                                     echo "
                                     
                                     <div class='form-check '>
-                                        <input class='form-check-input' type='checkbox' id='cb$ima' value='$ima'>
+                                        <input class='form-check-input' type='checkbox' id='cb$ima' name='idImagenes[]' value='$id_ima'>
                                         <label class='form-check-label' for='cb$ima'>
                                             <img class='card-imagen-modificar' src='../images/productos/$ima'>
                                         </label>
@@ -105,7 +106,7 @@
                                                 </lord-icon>
                                                 <p class='modificar-producto-titulo-label'>Añadir más imagenes</p>
                                             </label>            
-                                            <input id='cargar-img' onchange='subirimg()' name='image[]' multiple='' type='file' accept='image/*' required/>
+                                            <input id='cargar-img' onchange='subirimg()' name='image[]' multiple='' type='file' accept='image/*'/>
                                         </div>
                                 
                                         <div class='col-6 align-self-center' id='img-cargadas'></div>

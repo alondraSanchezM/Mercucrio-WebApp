@@ -57,6 +57,11 @@ if(isset($_REQUEST['id_u'])){
                 mysqli_query($link,"insert into Imagenes(id_producto,id_user,nombre)values($id_p,$id_user,'$imgNombre')");
             }
         }
+        if(!empty($_REQUEST['idImagenes'])){
+            foreach($_REQUEST['idImagenes'] as $selected){
+                mysqli_query($link,"delete from Imagenes where id_imagen=$selected");
+            }
+        }
         mysqli_free_result($result);
     }else if(isset($_REQUEST['id_user'])){//agregar producto
         $id_user=$_REQUEST['id_user'];
