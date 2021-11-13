@@ -69,13 +69,52 @@
                     echo "              
                             <div class='cards-modificar-producto-big card-borde d-flex flex-column'>
                                 <h3 class='modificar-producto-titulo'>Imágenes</h3>
-                                <input name='image[]' multiple='' type='file' accept='image/*'/>";
+                                <div class='container'>
+                                <div class='row' >
+                                    <p class='modificar-producto-titulo-label'>Seleccione las imagenes que desea eliminar</p>
+                                </div>
+                                    <div class='row scrollmenu-img-modificar flex-row'>
+                                ";
+                            
                                 $imagenes=mysqli_query($link,"select * from imagenes where id_producto=$id_p");
                                 
                                 while ($row=mysqli_fetch_array($imagenes)) {
                                     $ima=$row['nombre'];
-                                    echo "<div class='carousel-item active '> <img class='ver-productos-img-carousel' src='../images/productos/$ima'></div>";
+                                    echo "
+                                    
+                                    <div class='form-check '>
+                                        <input class='form-check-input' type='checkbox' id='cb$ima' value='$ima'>
+                                        <label class='form-check-label' for='cb$ima'>
+                                            <img class='card-imagen-modificar' src='../images/productos/$ima'>
+                                        </label>
+                                    </div>
+
+                                    ";
                                 }
+                    echo"       
+                                    </div>
+                                    <script src='https://cdn.lordicon.com/libs/mssddfmo/lord-icon-2.1.0.js'></script>
+                                    <div class='row' >
+                                        <div class='col-6'>
+                                            <label for='cargar-img' class='label-img-producto-individual'>
+                                                <lord-icon
+                                                    src='https://cdn.lordicon.com/fgkmrslx.json'
+                                                    trigger='loop'
+                                                    colors='primary:#4a8aa1,secondary:#c60f7b'
+                                                    class='label-img-modificar-icon'>
+                                                </lord-icon>
+                                                <p class='modificar-producto-titulo-label'>Añadir más imagenes</p>
+                                            </label>            
+                                            <input id='cargar-img' onchange='subirimg()' name='image[]' multiple='' type='file' accept='image/*' required/>
+                                        </div>
+                                
+                                        <div class='col-6 align-self-center' id='img-cargadas'></div>
+                                        
+                                
+                                        </div>
+                                        </div>
+                                
+                                ";
                             echo" </div>
                             <div class='cards-modificar-producto-small card-borde d-flex flex-column'>
                                 <h3 class='modificar-producto-titulo'>ubicación del intercambio</h3>
@@ -102,6 +141,21 @@
 <?php          
     require_once '../footer.php';
 ?>
+
+
+<script>
+    
+function subirimg(){
+    let cargar = ''
+    let imNames= document.getElementById('cargar-img').files
+    for (const file in imNames) 
+        if(imNames[file].name) 
+            if(imNames[file].name !='item')
+                cargar=cargar+'<p class="card-titulo">'+imNames[file].name+'</p>'
+    document.getElementById('img-cargadas').innerHTML = cargar
+    console.log(imNames);
+}
+</script>
 
 </body>
 </html>

@@ -322,6 +322,13 @@ body {
     border: 0px solid transparent;
     border-radius: 22px 22px 0 0;
 }
+.card-imagen-modificar {
+    width: 10rem;
+    height: 10rem;
+    margin: 1rem 1rem 0 1rem;
+    border: 0px solid transparent;
+    border-radius: 22px 22px;
+}
 
 .card-categoria {
     margin: 1rem 0 0 1rem;
@@ -357,6 +364,29 @@ body {
     text-align: right;
 }
 
+.scrollmenu-img-modificar {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.scrollmenu-img-modificar a {
+    display: inline-block;
+    color: var(--color-secundario);
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+.scrollmenu-img-modificar a:hover {
+    background-color: var(--color-secundario-boton);
+}
+
+.form-check .form-check-input{
+    margin-left: 0;
+}
+.form-check {
+    width: auto;
+}
 /* Cards de mis productos */
 
 .card-mis-productos-imagen {
@@ -727,6 +757,13 @@ body {
 .label-img-producto-individual-icon{
     margin-top: 20%;
     min-width: 30rem;
+    width: 50%;
+    height: 50%;
+}
+
+.label-img-modificar-icon{
+    margin-top: 20%;
+    min-width: 15rem;
     width: 50%;
     height: 50%;
 }
