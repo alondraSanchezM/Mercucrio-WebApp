@@ -11,17 +11,14 @@ if(isset($_REQUEST['id_u'])){
     $nombre=$_REQUEST['nombre'];
     $telefono=$_REQUEST['telefono'];
 
-    echo "<br>$correo";
-    echo "<br>$pass";
-    echo "<br>$nombre";
-    echo "<br>$telefono";
-    //ACTUALIZAR VARIABLES DE SESION
     mysqli_query($link,"update users set nombre='$nombre',correo='$correo',pass='$pass',telefono='$telefono' where id_user=$id_u");
-        /*$_SESSION['id']=$row['id_user'];//En teoria no cambia
-        $_SESSION['nombre']=$nombre; 
-        $_SESSION['username']=$usu; //Variables de sesion
-        $_SESSION['tipoUsuario']=1; //En teoria no cambia*/
-        header("Location:body-datos.php");
+    
+    session_start();
+    $_SESSION['nombre']=$nombre;
+    $_SESSION['username']=$correo; 
+
+    header("Location:body-datos.php");
+
 }else{
     $categorias=array("Vehículos","Tecnología","Electrodomésticos",'Hogar y muebles','Moda y complementos' ,"Deportes y Fitness","Herramientas y construcción" ,"Industria y oficina","Juegos y juguetes" ,"Bebés","Salud y Belleza" ,"Arte y antigüedades" ,"Libros y comics","Coleccionables","Otros");
     $cat=$_REQUEST['categoria'];
