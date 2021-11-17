@@ -30,11 +30,18 @@ if (isset($_SESSION['tipoUsuario'])){
                         ?>
                             <label class="nombre-form">Iniciar sesión </label>
                             <label class="label-login">Correo electrónico </label>
-                            <input  class="input-login" type="text" name="usu" required>
+                            <input  class="input-login" type="email" name="usu" required>
                             <label class="label-login">Contraseña </label>
-                            <input  class="input-login" type="password" name="passwd" required>
+                            <input  class="input-login" type="password"  name="passwd" required>
                             <input class="boton-login card-borde" type="submit"  name="enviar" value="Iniciar sesión"/>
-                            <p class="label-login-registro">¿Aún no te registras?<?php if($u==1) echo "<a href='register.php?u=1'>";else if(isset($_GET['id_p'])) echo "<a href='register.php?id_p=$_GET[id_p]'>"; else echo "<a href='register.php'>";?><span class="label-login-registro-span">Crea una cuenta.</span></a></p>
+                            <p class="label-login-registro">¿Aún no te registras?
+                                <?php 
+                                    if($u==1) echo "<a href='register.php?u=1'>";
+                                    else if(isset($_GET['id_p'])) echo "<a href='register.php?id_p=$_GET[id_p]'>"; 
+                                    else echo "<a href='register.php'>";
+                                ?>
+                                <span class="label-login-registro-span"> Crea una cuenta.</span></a>
+                            </p>
                         </form>
                     </div>
                 </div>

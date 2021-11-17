@@ -3,7 +3,6 @@ if (isset($_SESSION['tipoUsuario'])){
     if($_SESSION['tipoUsuario']==1) header("Location:cliente/body-principal.php");
     if($_SESSION['tipoUsuario']==0) header("Location:administrador/body-principal.php");
 }
-
     $subCarp="./";
     require_once 'head.php';
 ?>
@@ -32,19 +31,19 @@ if (isset($_SESSION['tipoUsuario'])){
                             <div class="row">
                                 <div class="col login-registro-nt">
                                     <label class="label-login-nt">Nombre </label>
-                                    <input  class="input-login-nt" type="text" name="nombre" required>
+                                    <input  class="input-login-nt" minlength="3" type="text" name="nombre" required>
                                 </div>
                                 <div class="col login-registro-nt">
                                     <label class="label-login-nt">Telefono </label>
-                                    <input  class="input-login-nt" type="tel" name="telefono" required>
+                                    <input  class="input-login-nt" minlength="10" maxlength="10" type="tel" pattern="[0-9]{10}" name="telefono" required>
                                 </div>
                             </div>
                             <label class="label-login">Correo electrónico </label>
-                            <input  class="input-login" type="text" name="usu" required>
+                            <input  class="input-login" type="email" name="usu" required>
                             <label class="label-login">Contraseña </label>
-                            <input  class="input-login" type="password" name="passwd" required>
+                            <input  class="input-login" minlength="7" type="password" name="passwd" required>
                             <input class="boton-login card-borde" type="submit"  name="enviar" value="Crear cuenta"/>
-                            <p class="label-login-registro">¿Ya estas registrado?<?php if($u==1) echo "<a href='login.php?u=1'>";else if(isset($_GET['id_p'])) echo "<a href='login.php?id_p=$_GET[id_p]'>"; else echo "<a href='login.php'>";?><span class="label-login-registro-span">Inicia sesión.</span></a></p>
+                            <p class="label-login-registro">¿Ya estas registrado?<?php if($u==1) echo "<a href='login.php?u=1'>";else if(isset($_GET['id_p'])) echo "<a href='login.php?id_p=$_GET[id_p]'>"; else echo "<a href='login.php'>";?><span class="label-login-registro-span"> Inicia sesión.</span></a></p>
                         </form>
                     </div>
                 </div>
