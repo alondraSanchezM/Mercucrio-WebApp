@@ -23,19 +23,18 @@
             $imagen=mysqli_fetch_array($imagen);
             $ima=$imagen['nombre'];
             echo "<div class='align-items-center justify-content-center ultimos-productos-container-grid'>";
-            if($user!=0) {
-                echo "<a href='producto-individual.php?id={$row['id_producto']}'>";
-            }else{
-                echo "<a href='login.php?id_p={$row['id_producto']}'>";
-            }
-            echo "<div class='ultimos-productos card-borde'>";
-            echo "<img  class='card-imagen' src='".$subCarp."images/productos/$ima'>";
-            
-            echo "<p class='card-categoria'>$cat</p>";
-            echo "<p  class='card-titulo'>$nom</p>";
-            echo"<div class='d-flex  flex-row'><img class='card-ubicacion' src='".$subCarp."images/ubicacion.svg'> <p  class='card-ubicacion'>$mun, $est</p>";
-            echo "<p  class='card-fecha col align-self-end'> Publicado: $fech</p></div>";
-            echo "</div>";  
+                echo "<div class='ultimos-productos card-borde'>";
+                    if($user!=0) {
+                        echo "<a href='producto-individual.php?id={$row['id_producto']}'>";
+                    }else{
+                        echo "<a href='login.php?id_p={$row['id_producto']}'>";
+                    }
+                    echo "<img  class='card-imagen' src='".$subCarp."images/productos/$ima'>";
+                    echo "<p class='card-categoria'>$cat</p>";
+                    echo "<p  class='card-titulo'>$nom</p>";
+                    echo"<div class='d-flex  flex-row'><img class='card-ubicacion' src='".$subCarp."images/ubicacion.svg'> <p  class='card-ubicacion'>$mun, $est</p>";
+                        echo "<p  class='card-fecha col align-self-end'> Publicado: $fech</p></div>";
+                echo "</a></div>";  
             echo "</div>";
     
         

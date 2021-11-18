@@ -56,9 +56,10 @@
                     $est=$row['estado'];
                     $mun=$row['municipio'];
                     $fecha=$row['fecha'];
-                    $ima=$id_u.$id_p.'.jpg';
                     $desp=$row['descripcion'];
-
+                    $result2=mysqli_query($link,"select * from imagenes where id_producto=$id_p limit 1"); 
+                    $row2=mysqli_fetch_array($result2);
+                    $ima=$row2['nombre'];
                     echo "<div class='d-flex  flex-row justify-content-between'> <img  class='card-mis-productos-imagen' src='../images/productos/$ima' >";
                     echo "<div class='d-flex  flex-column card-mis-productos-texto align-self-start'> <p class='card-mis-productos-titulo'>$nom</p>  <p class='card-mis-productos-descripcion'>$desp</p> </div> ";
                     echo "<div class='d-flex  flex-column card-mis-productos-datos-finales col ' > <p class='card-mis-productos-categoria'>$cat</p> ";

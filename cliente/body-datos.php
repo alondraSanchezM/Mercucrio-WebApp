@@ -67,19 +67,19 @@
                                         <div class='col-6'>
                                             <p class='modal-datos-cliente-info-titulo'>datos de cuenta</p>
                                             <p class='modal-datos-cliente-info-text'> Correo electrónico </p>
-                                            <input class='modal-datos-cliente-info-input me-2' type='text'  value='$correo' name='correo'>
+                                            <input class='modal-datos-cliente-info-input me-2' type='email'  value='$correo' name='correo' required>
                                             <hr class='linea-modal-mis-datos'>
                                             <p class='modal-datos-cliente-info-text'> Contraseña </p>
-                                            <input class='modal-datos-cliente-info-input me-2' type='password' value='$pass'  name='pass'>
+                                            <input class='modal-datos-cliente-info-input me-2' type='password'  minlength='7' value=''  name='pass' required>
                                             <hr class='linea-modal-mis-datos'>
                                         </div>
                                         <div class='col-6'>
                                             <p class='modal-datos-cliente-info-titulo'>Datos personales</p>
                                             <p class='modal-datos-cliente-info-text'> Nombre </p>
-                                            <input class='modal-datos-cliente-info-input me-2' type='text' value='$nombre'  name='nombre'>
+                                            <input class='modal-datos-cliente-info-input me-2' type='text' minlength='3' value='$nombre'  name='nombre' required>
                                             <hr class='linea-modal-mis-datos'>
                                             <p class='modal-datos-cliente-info-text'> Teléfono </p>
-                                            <input class='modal-datos-cliente-info-input me-2' type='text'  value='$tel' name='telefono'>
+                                            <input class='modal-datos-cliente-info-input me-2' type='text'  minlength='10' maxlength='10' value='$tel' name='telefono' onkeypress='return numeros(event)' required>
                                             <hr class='linea-modal-mis-datos'>
                                         </div>
                                     </div>
@@ -100,7 +100,25 @@
 <?php          
 require_once '../footer.php';
 ?>
-
+<script>
+    function numeros(e){
+    key = e.keyCode || e.which;
+    tecla = String.fromCharCode(key).toLowerCase();
+    letras = " 0123456789";
+    especiales = [8,37,39,46];
+ 
+    tecla_especial = false
+    for(var i in especiales){
+ if(key == especiales[i]){
+     tecla_especial = true;
+     break;
+        } 
+    }
+ 
+    if(letras.indexOf(tecla)==-1 && !tecla_especial)
+        return false;
+}
+</script>
 
 </body>
 

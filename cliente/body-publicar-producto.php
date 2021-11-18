@@ -34,7 +34,7 @@
                 }
                 echo "</select>";
                 echo "   <label class='modificar-producto-titulo-label' >Título (máx 30 carácteres):<span>*</span></label> 
-                            <INPUT TYPE='text' NAME='nombre' class='form-control  modificar-producto-select modificar-producto-titulo-label ' > 
+                            <INPUT TYPE='text' maxlength='30' NAME='nombre' class='form-control  modificar-producto-select modificar-producto-titulo-label ' > 
                         <label class='modificar-producto-titulo-label' >Descripción del producto:<span>*</span></label> 
                             <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='descripcion'></TEXTAREA>
                     </div>

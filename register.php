@@ -6,7 +6,25 @@ if (isset($_SESSION['tipoUsuario'])){
     $subCarp="./";
     require_once 'head.php';
 ?>
-
+<script>
+    function numeros(e){
+            key = e.keyCode || e.which;
+            tecla = String.fromCharCode(key).toLowerCase();
+            letras = " 0123456789";
+            especiales = [8,37,39,46];
+        
+            tecla_especial = false
+            for(var i in especiales){
+        if(key == especiales[i]){
+            tecla_especial = true;
+            break;
+                } 
+            }
+        
+            if(letras.indexOf(tecla)==-1 && !tecla_especial)
+                return false;
+        }
+</script>
 
 <body>
     <div class="login-form">
@@ -35,7 +53,7 @@ if (isset($_SESSION['tipoUsuario'])){
                                 </div>
                                 <div class="col login-registro-nt">
                                     <label class="label-login-nt">Telefono </label>
-                                    <input  class="input-login-nt" minlength="10" maxlength="10" type="tel" pattern="[0-9]{10}" name="telefono" required>
+                                    <input  class="input-login-nt" minlength="10" maxlength="10"  name="telefono" onkeypress="return numeros(event)" required>
                                 </div>
                             </div>
                             <label class="label-login">Correo electrónico </label>

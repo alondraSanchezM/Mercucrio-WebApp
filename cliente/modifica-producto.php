@@ -51,9 +51,9 @@
                     }
                     echo "</select>";
                     echo "   <label class='modificar-producto-titulo-label' >Título (máx 30 carácteres):<span>*</span></label> 
-                                <INPUT TYPE='text' NAME='nombre' class='form-control  modificar-producto-select modificar-producto-titulo-label ' value='$tit' > 
+                                <INPUT TYPE='text' NAME='nombre' class='form-control  modificar-producto-select modificar-producto-titulo-label' maxlength='30' value='$tit' required> 
                             <label class='modificar-producto-titulo-label' >Descripción del producto:<span>*</span></label> 
-                                <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='descripcion'>$des</TEXTAREA>
+                                <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='descripcion' required>$des</TEXTAREA>
                         </div>
                     
                         <div class='cards-modificar-producto-small card-borde d-flex flex-column'>
@@ -106,7 +106,7 @@
                                                 </lord-icon>
                                                 <p class='modificar-producto-titulo-label'>Añadir más imagenes</p>
                                             </label>            
-                                            <input id='cargar-img' onchange='subirimg()' name='image[]' multiple='' type='file' accept='image/*'/>
+                                            <input id='cargar-img' onchange='subirimg()' name='image[]' multiple='' type='file' accept='image/*' required/>
                                         </div>
                                 
                                         <div class='col-6 align-self-center' id='img-cargadas'></div>
