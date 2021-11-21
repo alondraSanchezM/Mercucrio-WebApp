@@ -269,6 +269,9 @@ form input[type="email"] {
     margin-top: 8rem;
 }
 
+.administrador-logo-usuario{
+    width: 10%;
+}
 .ultimos-productos-container-grid {
     display: flex;
     justify-content: center;
@@ -1239,5 +1242,10 @@ a:link, a:visited, a:active {
     .card-administrador-cl-pr{
         width: 145rem;
     }
+    
+main {
+    min-height: 47rem;
+}
+    
     
 }

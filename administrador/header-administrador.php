@@ -7,7 +7,7 @@
             </div>
         </div>
 
-        <div class="  d-flex align-items-center">
+        <div class="administrador-logo-usuario  d-flex align-items-center">
             <div class="dropdown">
                 <a  class="link-menu-usuario" href="#" role="button" id="dropdownMenuLink"
                     data-bs-toggle="dropdown" aria-expanded="false">
@@ -20,9 +20,6 @@
                     </div>
                 </ul>
                 
-            </div>
-            <div>
-                <img class="icon-search" src="../images/Icon-search.svg" alt="Busqueda en el sistema">
             </div>
         </div>
     </div>
