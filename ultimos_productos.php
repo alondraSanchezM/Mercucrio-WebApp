@@ -7,7 +7,7 @@
         $categoria=$_GET['categoria'];
         $result=mysqli_query($link,"select * from Productos where status='0' and categoria='$categoria'");
     }else{
-        $result=mysqli_query($link,"select * from Productos where status='0'");
+        $result=mysqli_query($link,"select * from Productos where status='0' ORDER BY fecha DESC");
     }
     echo "<div class='grid-productos'>";
         while($row=mysqli_fetch_array($result)){ 
