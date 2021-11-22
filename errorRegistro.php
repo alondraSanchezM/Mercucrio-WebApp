@@ -31,17 +31,17 @@ require_once 'head.php';
                             <div class="row">
                                 <div class="col login-registro-nt">
                                     <label class="label-login-nt">Nombre </label>
-                                    <input  class="input-login-nt" type="text" name="nombre" required>
+                                    <input  class="input-login-nt" type="text" minlength="3" name="nombre" required>
                                 </div>
                                 <div class="col login-registro-nt">
-                                    <label class="label-login-nt">Telefono </label>
-                                    <input  class="input-login-nt" type="tel" name="telefono" required>
+                                    <label class="label-login-nt">Teléfono </label>
+                                    <input  class="input-login-nt" minlength="10" maxlength="10" type="tel" name="telefono" required>
                                 </div>
                             </div>
                             <label class="label-login">Correo electrónico </label>
                             <input  class="input-login" type="text" name="usu" required>
                             <label class="label-login">Contraseña </label>
-                            <input  class="input-login" type="password" name="passwd" required>
+                            <input  class="input-login" minlength="7" type="password" name="passwd" required>
                             <input class="boton-login card-borde" type="submit"  name="enviar" value="Crear cuenta"/>
                             <?php 
                                 if(isset($_GET['mensaje'])) {

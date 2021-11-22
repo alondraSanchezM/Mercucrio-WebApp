@@ -34,18 +34,18 @@
                 }
                 echo "</select>";
                 echo "   <label class='modificar-producto-titulo-label' >Título (máx 30 carácteres):<span>*</span></label> 
-                            <INPUT TYPE='text' maxlength='30' NAME='nombre' class='form-control  modificar-producto-select modificar-producto-titulo-label ' > 
+                            <INPUT TYPE='text' maxlength='30' NAME='nombre' class='form-control  modificar-producto-select modificar-producto-titulo-label ' required> 
                         <label class='modificar-producto-titulo-label' >Descripción del producto:<span>*</span></label> 
-                            <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='descripcion'></TEXTAREA>
+                            <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' maxlength='500' NAME='descripcion' required></TEXTAREA>
                     </div>
                 
                     <div class='cards-modificar-producto-small card-borde d-flex flex-column'>
 
                         <h3 class='modificar-producto-titulo'>qué te gustaría a cambio?</h3>
                         <label class='modificar-producto-titulo-label' >Título:<span>*</span></label> 
-                            <INPUT TYPE='text' NAME='titulo_cambio'   class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
+                            <INPUT TYPE='text' maxlength='30' NAME='titulo_cambio' class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
                         <label class='modificar-producto-titulo-label' >Descripción:<span>*</span></label> 
-                            <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='descripcion_cambio' required></TEXTAREA>
+                            <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' maxlength='300' NAME='descripcion_cambio' required></TEXTAREA>
                             
                     </div>";
                 
@@ -60,7 +60,7 @@
                                     colors='primary:#4a8aa1,secondary:#c60f7b'
                                     class='label-img-producto-individual-icon'>
                                 </lord-icon>
-                                <p class='modificar-producto-titulo-label'>Añadir imagenes</p>
+                                <p class='modificar-producto-titulo-label'>Añadir imagenes <span>*</span></p>
                             </label>
                             <input id='cargar-img' onchange='subirimg()' name='image[]' multiple='' type='file' accept='image/*' required/>
                             <div id='img-cargadas'></div>
@@ -68,13 +68,13 @@
                         <div class='cards-modificar-producto-small card-borde d-flex flex-column'>
                             <h3 class='modificar-producto-titulo'>ubicación del intercambio</h3>
                             <label class='modificar-producto-titulo-label' >Estado:<span>*</span></label> 
-                                <INPUT TYPE='text' NAME='estado'  class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
+                                <INPUT TYPE='text' maxlength='20' NAME='estado'  class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
                             <label class='modificar-producto-titulo-label' > Municipio:<span>*</span></label> 
-                                <INPUT TYPE='text' NAME='municipio'   class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
+                                <INPUT TYPE='text' maxlength='20' NAME='municipio'   class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
                             <label class='modificar-producto-titulo-label' >Calle y número:<span>*</span></label> 
-                                <INPUT TYPE='text' NAME='calle' class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
+                                <INPUT TYPE='text' maxlength='50' NAME='calle' class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
                             <label class='modificar-producto-titulo-label' >Referencias:<span>*</span></label>  
-                                <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='referencia'></TEXTAREA>
+                                <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' maxlength='150' NAME='referencia' required></TEXTAREA>
                         </div>";
                 echo "<input type='hidden' name='id_user' value='$id'>";
                 echo "<INPUT TYPE='SUBMIT' class='modificar-productos-boton card-borde' value='Publicar producto'>";

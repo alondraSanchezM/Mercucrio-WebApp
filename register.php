@@ -52,7 +52,7 @@ if (isset($_SESSION['tipoUsuario'])){
                                     <input  class="input-login-nt" minlength="3" type="text" name="nombre" required>
                                 </div>
                                 <div class="col login-registro-nt">
-                                    <label class="label-login-nt">Telefono </label>
+                                    <label class="label-login-nt">Teléfono </label>
                                     <input  class="input-login-nt" minlength="10" maxlength="10"  name="telefono" onkeypress="return numeros(event)" required>
                                 </div>
                             </div>

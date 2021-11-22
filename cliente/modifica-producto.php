@@ -104,7 +104,7 @@
                                                     colors='primary:#4a8aa1,secondary:#c60f7b'
                                                     class='label-img-modificar-icon'>
                                                 </lord-icon>
-                                                <p class='modificar-producto-titulo-label'>Añadir más imagenes</p>
+                                                <p class='modificar-producto-titulo-label'>Añadir más imagenes <span>*</span> </p>
                                             </label>            
                                             <input id='cargar-img' onchange='subirimg()' name='image[]' multiple='' type='file' accept='image/*' required/>
                                         </div>
@@ -126,7 +126,7 @@
                                 <label class='modificar-producto-titulo-label' >Calle y número:<span>*</span></label> 
                                     <INPUT TYPE='text' NAME='calle' value='$ca_num'  class='form-control  modificar-producto-select modificar-producto-titulo-label ' required>
                                 <label class='modificar-producto-titulo-label' >Referencias:<span>*</span></label>  
-                                    <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='referencia'>$ref</TEXTAREA>
+                                    <TEXTAREA class='modificar-producto-textarea modificar-producto-titulo-label form-control' NAME='referencia' required>$ref</TEXTAREA>
                             </div>";
                     echo "<input type='hidden' name='id' value='$id_p'>";
                     echo "<INPUT TYPE='SUBMIT' class='modificar-productos-boton card-borde' value='Actualizar'>";
