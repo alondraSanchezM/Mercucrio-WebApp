@@ -42,6 +42,6 @@ Mercurio, es una aplicación web orientada a satisfacer la necesidad de ser un m
 Puedes consultar el diseño de las interfaces [aquí](https://www.behance.net/gallery/128950001/Mercurio-web-application).
 
 ## Autores ✒️
-- Alondra Sánchez - [alondraSanchezM](https://github.com/alondraSanchezM)
-- Deisy D. Gonzalez - [deisyDanielaG](https://github.com/deisyDanielaG)
-- Mark A. López - [SDWarkXD](https://github.com/SDWarkXD)
+- Alondra Sánchez - _UX-UI Design, Backend_ - [alondraSanchezM](https://github.com/alondraSanchezM)
+- Deisy D. Gonzalez - _Database, Backend_ - [deisyDanielaG](https://github.com/deisyDanielaG)
+- Mark A. López - _Frontend_ - [SDWarkXD](https://github.com/SDWarkXD)
